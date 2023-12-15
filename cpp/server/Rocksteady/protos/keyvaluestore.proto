@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package keyvaluestore;
+
+service KeyValueStore {
+    rpc PriorityPull (Request) returns (Response) {}
+}
+
+// The request message containing the key
+message Request {
+  repeated bytes keys = 1;
+}
+
+// The response message containing the value associated with the key
+message Response {
+  repeated bytes values = 1;
+}

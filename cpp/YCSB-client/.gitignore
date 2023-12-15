@@ -1,0 +1,10 @@
+*.o
+*.d
+ycsb
+ycsb-*
+.idea/
+.vimrc
+tags
+compile_commands.json
+.clangd/
+.cache/

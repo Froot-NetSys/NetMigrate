@@ -1,0 +1,9 @@
+[submodule "cpp/third_party/redis-plus-plus"]
+	path = cpp/third_party/redis-plus-plus
+	url = https://github.com/sewenew/redis-plus-plus.git
+[submodule "cpp/third_party/hiredis"]
+	path = cpp/third_party/hiredis
+	url = https://github.com/redis/hiredis.git
+[submodule "cpp/third_party/googletest"]
+	path = cpp/third_party/googletest
+	url = https://github.com/google/googletest.git
