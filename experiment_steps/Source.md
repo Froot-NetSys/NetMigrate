@@ -50,7 +50,7 @@ bash source_migr.sh
 ## Run YCSB Clients Immetiately
 
 ```
-./ycsb-source -run -db KV -P workloads/workloadc  -P Source/run_1.properties -p threadcount=8 -s > result_1/source-c-16GB-100%.txt
+./ycsb-source -run -db KV -P workloads/workloadc  -P Source/run.properties -p threadcount=8 -s > result/source-c-16GB-100%.txt
 ```
 
 

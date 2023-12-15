@@ -41,7 +41,7 @@ bash run_dst.sh
 
 ## Run YCSB Clients
 ```
-./ycsb-rocksteady -run -db KV -P workloads/workloadc -P Rocksteady/run.properties -p threadcount=8 -s > result_1/rocksteady-c-16GB-100%.txt
+./ycsb-rocksteady -run -db KV -P workloads/workloadc -P Rocksteady/run.properties -p threadcount=8 -s > result/rocksteady-c-16GB-100%.txt
 ```
 
 ## Start source migration push server

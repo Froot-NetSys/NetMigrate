@@ -48,7 +48,7 @@ bash run_src_push.sh
 
 ## Run YCSB Clients Immediately
 ```
-./ycsb-kv_migration -run -db KV -P workloads/workloadc -P kv_migration/kv_migration.properties -p threadcount=8 -s > result_1/NetMigrate-c-16GB-100%.txt
+./ycsb-kv_migration -run -db KV -P workloads/workloadc -P kv_migration/kv_migration.properties -p threadcount=8 -s > result/NetMigrate-c-16GB-100%.txt
 ```
 
 

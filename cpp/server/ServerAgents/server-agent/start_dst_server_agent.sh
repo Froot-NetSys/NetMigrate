@@ -1,1 +1,0 @@
-./server_agent destination 127.0.0.1 6379 10.0.0.8 9000 12

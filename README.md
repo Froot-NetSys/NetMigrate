@@ -66,15 +66,15 @@ Note:
 ```
 cd ../ServerAgents/server-agent
 make 
-bash start_src_server_agent_1.sh # do this at source server
+bash start_src_server_agent.sh # do this at source server
 ```
 
 2. run YCSB client load
-Note: we only use Rocksteady's client to load for all migration protocols.
+Note: we use Rocksteady's client to load data to source redis-server for all migration protocols.
 ```
 cd ../../YCSB-client 
 make BIND_ROCKSTEADY=1
-./ycsb-rocksteady -load -db KV -P workloads/workloada -P Rocksteady/load_1.properties -p threadcount=4 -p recordcount=10000000 -s # load data first
+./ycsb-rocksteady -load -db KV -P workloads/workloada -P Rocksteady/load.properties -p threadcount=4 -p recordcount=10000000 -s # load data first
 ```
 
 ### 2. Run Migration for Four Protocols
