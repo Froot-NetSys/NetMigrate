@@ -23,7 +23,7 @@ NetMigrate is a key-value store live migration protocol by leveraging programmal
 * Install [gRPC and Protocol Buffers](https://grpc.io/docs/languages/cpp/quickstart/).
 * Install [redis-plus-plus and hiredis](https://github.com/sewenew/redis-plus-plus?tab=readme-ov-file#installation)
 
-### Compile migration program 
+### Compile Migration Agents 
 Build Fulva baseline:
 ```
 cd $KV_Migration/cpp/server/Fulva/
@@ -55,6 +55,12 @@ mkdir build && cd build
 cmake -DCMAKE_PREFIX_PATH=$GRPC_INSTALL_DIR ..
 make 
 ```
+
+### Compile YCSB Clients
+[YCSB-client REAMDE](cpp/YCSB-client/README.md)
+
+### Compile and Run Switch Code
+[Tofino switch P4 code and controller README](tna_kv_migration/README.md)
 
 ## Run Migration Experiments  
 
