@@ -18,9 +18,6 @@ NetMigrate is a key-value store live migration protocol by leveraging programmal
 * Software
    * Tofino SDK (version 9.4.0) on the switch.
    * Python2.7 on the switch.
-   * 
-
-
 
 ## Installation
 ### Pre-Requirments for Redis
@@ -28,6 +25,7 @@ NetMigrate is a key-value store live migration protocol by leveraging programmal
 * Install Redis with User-Defined Migration Functions
     ```
     git clone https://github.com/zzylol/redis.git
+    cd redis
     git checkout -b KVMigration-7.0 origin/KVMigration-7.0
     make && sudo make install 
     ```
