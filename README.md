@@ -35,7 +35,7 @@ NetMigrate is a key-value store live migration protocol by leveraging programmal
 ### Compile Migration Agents 
 Build Fulva baseline:
 ```
-cd $KV_Migration/cpp/server/Fulva/
+cd $NetMigrate/cpp/server/Fulva/
 mkdir build && cd build
 cmake -DCMAKE_PREFIX_PATH=$GRPC_INSTALL_DIR ..
 make 
@@ -43,7 +43,7 @@ make
 
 Build Rocksteady baseline:
 ```
-cd $KV_Migration/cpp/server/Rocksteady/
+cd $NetMigrate/cpp/server/Rocksteady/
 mkdir build && cd build
 cmake -DCMAKE_PREFIX_PATH=$GRPC_INSTALL_DIR ..
 make 
@@ -51,7 +51,7 @@ make
 
 Build source-migration baseline:
 ```
-cd $KV_Migration/cpp/server/Source-protocol/
+cd $NetMigrate/cpp/server/Source-protocol/
 mkdir build && cd build
 cmake -DCMAKE_PREFIX_PATH=$GRPC_INSTALL_DIR ..
 make 
@@ -59,7 +59,7 @@ make
 
 Build NetMigrate: 
 ```
-cd $KV_Migration/cpp/server/NetMigrate/
+cd $NetMigrate/cpp/server/NetMigrate/
 mkdir build && cd build
 cmake -DCMAKE_PREFIX_PATH=$GRPC_INSTALL_DIR ..
 make 
