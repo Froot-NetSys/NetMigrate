@@ -14,7 +14,7 @@ NetMigrate is a key-value store live migration protocol by leveraging programmal
 ## Testbed experiments
 * Hardware 
    * A Barefoot Tofino switch.
-   * Servers with a 40G NIC (we used an Intel XL710 for 40GbE QSFP+) and multi-core CPU, connected by the Tofino switch.
+   * At least 3 servers each with a NIC (we used an Intel XL710 for 40GbE QSFP+) and multi-core CPU, connected by the Tofino switch.
 * Software
    * Tofino SDK (version 9.4.0) on the switch.
    * Python2.7 on the switch.
