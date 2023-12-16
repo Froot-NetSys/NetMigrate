@@ -13,7 +13,7 @@ ps aux | grep redis
 cpulimit -p 1234 -l 40
 ```
 
-## Start redis-server 
+## Start Destination Redis-server 
 In destination:
 ```
 ps aux | grep redis # check existing redis-server
@@ -23,16 +23,14 @@ redis-server --protected-mode no --port 7380 --save "" --appendonly no&
 
 
 ## Start source priority pull server
-
+In source server:
 ```
 cd KV_Migration/cpp/server/Rocksteady
 bash run_src_pull.sh
 ```
-Note: We can only run source pull to test PriorityPull implementation/performance.
-
 
 ## Start destination migration script
-Run destination script first.
+In destination server:
 ```
 cd KV_Migration/cpp/server/Rocksteady
 bash run_dst.sh
@@ -40,13 +38,14 @@ bash run_dst.sh
 
 
 ## Run YCSB Clients
+In client server:
 ```
 ./ycsb-rocksteady -run -db KV -P workloads/workloadc -P Rocksteady/run.properties -p threadcount=8 -s > result/rocksteady-c-16GB-100%.txt
 ```
 
 ## Start source migration push server
 
-After running client of at least 200 seconds, in source server:
+After running client for about 200 seconds, in source server:
 ```
 cd KV_Migration/cpp/server/Rocksteady
 bash run_src_push.sh
