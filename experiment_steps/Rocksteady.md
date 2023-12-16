@@ -22,17 +22,17 @@ redis-server --protected-mode no --port 7380 --save "" --appendonly no&
 ```
 
 
-## Start source priority pull server
+## Start source priority pull 
 In source server:
 ```
-cd KV_Migration/cpp/server/Rocksteady
+cd NetMigrate/cpp/server/Rocksteady
 bash run_src_pull.sh
 ```
 
-## Start destination migration script
+## Start destination migration agent
 In destination server:
 ```
-cd KV_Migration/cpp/server/Rocksteady
+cd NetMigrate/cpp/server/Rocksteady
 bash run_dst.sh
 ```
 
@@ -43,11 +43,11 @@ In client server:
 ./ycsb-rocksteady -run -db KV -P workloads/workloadc -P Rocksteady/run.properties -p threadcount=8 -s > result/rocksteady-c-16GB-100%.txt
 ```
 
-## Start source migration push server
+## Start source migration push to migrate data
 
 After running client for about 200 seconds, in source server:
 ```
-cd KV_Migration/cpp/server/Rocksteady
+cd NetMigrate/cpp/server/Rocksteady
 bash run_src_push.sh
 ```
 
