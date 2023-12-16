@@ -13,7 +13,8 @@ This is a fork of [YCSB-C](https://github.com/basicthinker/YCSB-C) with followin
 
  * Make Zipf distribution and data value more similar to the original YCSB
  * Status and latency report during benchmark
- * Supported Databases: LevelDB, RocksDB, LMDB
+ * Supported Databases: LevelDB, RocksDB, LMDB, Redis
+ * Supported Migration Progtocols (for Redis): NetMigrate, Rocksteady, Fulva, Sourc-base Migration
 
 ## Building
 
@@ -42,26 +43,28 @@ EXTRA_LDFLAGS ?= -L/example/rocksdb -ldl -lz -lsnappy -lzstd -lbz2 -llz4
 BIND_ROCKSDB ?= 1
 ```
 
-## Load and Run Examples
+## Examples for NetMigrate FAST'24 Experiments (4 baselines)
 
-### Build, Load and Run with kv_migration (for NetMigrate) APIs
+### Build and Run with kv_migration (for NetMigrate) APIs
 ```
 make BIND_KVMIGRATION=1 # build NetMigrate client
-./ycsb-kv_migration -load -db KV -P workloads/workloada -P kv_migration/kv_migration.properties -p threadcount=4 -p recordcount=100000 -s
-./ycsb-kv_migration -run -db KV -P workloads/workloada -P kv_migration/kv_migration.properties -s
+./ycsb-kv_migration -run -db KV -P workloads/workloadc -P kv_migration/kv_migration.properties -p threadcount=8 -s > result/NetMigrate-c-16GB-100%.txt
 ```
 
 ### Build Fulva Client
 ```
 make BIND_FULVA=1
+./ycsb-fulva -run -db KV -P workloads/workloadc -P Fulva/kv_migration.properties -p threadcount=8 -s > result/fulva-c-16GB-100%.txt
 ```
 
 ### Build Rocksteady Client
 ```
 make BIND_ROCKSTEADY=1
+./ycsb-rocksteady -run -db KV -P workloads/workloadc -P Rocksteady/run.properties -p threadcount=8 -s > result/rocksteady-c-16GB-100%.txt
 ```
 
 ### Build Source-base Migration Client
 ```
 make BIND_SOURCE=1
+./ycsb-source -run -db KV -P workloads/workloadc  -P Source/run.properties -p threadcount=8 -s > result/source-c-16GB-100%.txt
 ```
