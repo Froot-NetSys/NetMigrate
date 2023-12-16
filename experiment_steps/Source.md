@@ -22,7 +22,8 @@ redis-server --protected-mode no --port 7380 --save "" --appendonly no&
 ```
 
 
-## Start destination priority pull server
+## Start destination priority pull 
+In destination server:
 
 ```
 cd KV_Migration/cpp/server/Source-protocol/
@@ -31,16 +32,16 @@ bash destination_migr.sh
 
 In another terminal:
 ```
-cd KV_Migration/cpp/server/Source-protocol/server_agent/
+cd NetMigrate/cpp/server/Source-protocol/server_agent/
 bash start_dst_server_agent_4.sh
 ```
 
 
 
 ## Start source migration script
-
+In source server:
 ```
-cd KV_Migration/cpp/server/Source-protocol/
+cd NetMigrate/cpp/server/Source-protocol/
 bash source_migr.sh
 ```
 
