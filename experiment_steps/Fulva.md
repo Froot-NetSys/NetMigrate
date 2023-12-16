@@ -15,7 +15,7 @@ redis-server --protected-mode no --port 6380 --save "" --appendonly no&
 
 ## Start source priority pull server
 ```
-cd KV_Migration/cpp/server/Fulva
+cd NetMigrate/cpp/server/Fulva
 bash run_src_pull.sh
 ```
 Note: We can only run source pull to test PriorityPull implementation/performance.
@@ -34,10 +34,10 @@ cpulimit -p $(redis-server-pid) -l 40
 ```
 
 
-## Start destination migration script
+## Start destination migration agent
 Run destination script first.
 ```
-cd KV_Migration/cpp/server/Fulva
+cd NetMigrate/cpp/server/Fulva
 bash run_dst.sh
 ```
 
@@ -47,10 +47,10 @@ bash run_dst.sh
 ./ycsb-fulva -run -db KV -P workloads/workloadc -P Fulva/kv_migration.properties -p threadcount=8 -s > result/fulva-c-16GB-100%.txt
 ```
 
-## Start source migration push server
+## Start source migration push to migrate data
 
 After running client of about 200 seconds, in source server:
 ```
-cd KV_Migration/cpp/server/Fulva
+cd NetMigrate/cpp/server/Fulva
 bash run_src_push.sh
 ```
