@@ -68,6 +68,13 @@ make
 
 ### Compile YCSB Clients
 [YCSB-client REAMDE](cpp/YCSB-client/README.md)
+```
+cd $NetMigrate/cpp/YCSB-client
+make BIND_KVMIGRATION=1 # build NetMigrate client
+make BIND_FULVA=1 # build Fulva client
+make BIND_ROCKSTEADY=1 # build Rocksteady client
+make BIND_SOURCE=1 # build Source-based migration client
+```
 
 ### Compile and Run Switch Code
 [Tofino switch P4 code and controller README](tna_kv_migration/README.md)
