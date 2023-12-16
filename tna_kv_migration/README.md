@@ -1,1 +1,40 @@
-Note: the experiments are done with bf-sde-9.4.0 and python2.
+The experiments are done with bf-sde-9.4.0 and python2.
+
+# P4Studio setup
+```
+export SDE=path/to/bf-sde-9.4.0
+export SDE_INSTALL=$SDE/install
+export PATH=$SDE_INSTALL/bin:$PATH
+```
+# KV_Migration
+## Compile and install kv_migration project
+```
+cd $SDE
+./p4_build.sh $NetMigrate/tna_kv_migration/migration/kv_migration.p4
+```
+
+## Run switch
+Running switchd first:
+```
+cd $SDE/
+./run_switchd.sh -p kv_migration
+```
+
+Running controller:
+```
+cd tna_kv_migration/migration/controller
+python kv_controller.py
+```
+
+Add ports in switchd:
+```
+ucli
+pm
+port-add -/- 40G NONE
+port-enb -/-
+```
+
+## Manually set up ARP in end-hosts
+```
+sudo arp -s remote_ip remote_mac
+```
