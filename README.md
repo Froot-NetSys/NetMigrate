@@ -33,7 +33,7 @@ NetMigrate is a key-value store live migration protocol by leveraging programmal
 * Install [gRPC and Protocol Buffers](https://grpc.io/docs/languages/cpp/quickstart/).
 * Install [redis-plus-plus and hiredis](https://github.com/sewenew/redis-plus-plus?tab=readme-ov-file#installation)
 
-### Compile Migration Agents 
+### Compile Migration Agents in Source and Destination KVS Servers
 Build Fulva baseline:
 ```
 cd $NetMigrate/cpp/server/Fulva/
@@ -66,7 +66,7 @@ cmake -DCMAKE_PREFIX_PATH=$GRPC_INSTALL_DIR ..
 make 
 ```
 
-### Compile YCSB Clients
+### Compile YCSB Clients in Client Servers
 [YCSB-client REAMDE](cpp/YCSB-client/README.md)
 ```
 cd $NetMigrate/cpp/YCSB-client
@@ -76,14 +76,14 @@ make BIND_ROCKSTEADY=1 # build Rocksteady client
 make BIND_SOURCE=1 # build Source-based migration client
 ```
 
-### Compile and Run Switch Code
+### Compile and Run Switch Code in Switch
 [Tofino switch P4 code and controller README](tna_kv_migration/README.md)
 
 (**Note for FAST'24 artifact evaluation process**: We can provide testbed with Tofino SDK installed if needed.)
 
 ## Run Migration Experiments  
-
-### 1. Start Source Redis-server instance
+ 
+### 1. Start Source Redis-server instance in Source Server
 ```
 redis-server --protected-mode no --port 6380 --save "" --appendonly no &
 ```
@@ -91,10 +91,10 @@ redis-server --protected-mode no --port 6380 --save "" --appendonly no &
 ### 2. Load YCSB Data to Source Redis-server
 1. Start Source Request Server Agents
 Note: 
-* change ```server_agent_start_port``` and ```thread_num``` in bash files to the same as YCSB client ```agent_start_port``` and ```thread_num``` properties.
+* change ```server_agent_start_port``` and ```thread_num``` in bash files to the same as YCSB client ```agent_start_port``` and ```thread_num``` properties if needed.
 
 ```
-cd ../ServerAgents/server-agent
+cd $NetMigrate/cpp/server/ServerAgents/server-agent
 make 
 bash start_src_server_agent.sh # do this at source server
 ```
@@ -102,10 +102,11 @@ bash start_src_server_agent.sh # do this at source server
 2. run YCSB client load
 Note: we use Rocksteady's client to load data to source redis-server for all migration protocols.
 ```
-cd ../../YCSB-client 
+cd $NetMigrate/cpp/YCSB-client 
 make BIND_ROCKSTEADY=1
-./ycsb-rocksteady -load -db KV -P workloads/workloada -P Rocksteady/load.properties -p threadcount=4 -p recordcount=10000000 -s # load data first
+./ycsb-rocksteady -load -db KV -P workloads/workloada -P Rocksteady/load.properties -p threadcount=4 -p recordcount=10000000 -s # load data first, about 5~10 min in our testbed.
 ```
+Check if the source Redis is still loading data from whether the CPU usage of it is 0%.
 
 ### 3. Run Migration for Four Protocols
 * [Rocksteady](experiment_steps/Rocksteady.md)
