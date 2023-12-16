@@ -75,7 +75,12 @@ make
 
 ## Run Migration Experiments  
 
-### 1. Load YCSB Data
+### 1. Start Source Redis-server instance
+```
+redis-server --protected-mode no --port 6380 --save "" --appendonly no &
+```
+
+### 2. Load YCSB Data to Source Redis-server
 1. Start Source Request Server Agents
 Note: 
 * change ```server_agent_start_port``` and ```thread_num``` in bash files to the same as YCSB client ```agent_start_port``` and ```thread_num``` properties.
@@ -94,7 +99,7 @@ make BIND_ROCKSTEADY=1
 ./ycsb-rocksteady -load -db KV -P workloads/workloada -P Rocksteady/load.properties -p threadcount=4 -p recordcount=10000000 -s # load data first
 ```
 
-### 2. Run Migration for Four Protocols
+### 3. Run Migration for Four Protocols
 * [Rocksteady](experiment_steps/Rocksteady.md)
 * [Fulva](experiment_steps/Fulva.md)
 * [Source-migration](experiment_steps/Source.md)
