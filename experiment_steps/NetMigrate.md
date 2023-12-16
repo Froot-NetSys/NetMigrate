@@ -23,25 +23,23 @@ redis-server --protected-mode no --port 7380 --save "" --appendonly no&
 
 ## Restart Switchd and controller
 
-## Start source priority pull server
+## Start source priority pull 
 ```
-cd KV_Migration/cpp/server/NetMigrate
+cd NetMigrate/cpp/server/NetMigrate
 bash run_src_pull.sh
 ```
-Note: We can only run source pull to test PriorityPull implementation/performance.
 
-
-## Start destination migration script
+## Start destination migration agent
 Run destination script first.
 ```
-cd KV_Migration/cpp/server/NetMigrate
+cd NetMigrate/cpp/server/NetMigrate
 bash run_dst.sh
 ```
 
-## Start source migration push server
+## Start source migration push to migrate data
 
 ```
-cd KV_Migration/cpp/server/NetMigrate
+cd NetMigrate/cpp/server/NetMigrate
 bash run_src_push.sh
 ```
 
