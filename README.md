@@ -11,13 +11,24 @@ NetMigrate is a key-value store live migration protocol by leveraging programmal
 * experiment_steps/: Experiment step README.
 * README.md: This file.
 
+## Testbed experiments
+* Hardware 
+   * A Barefoot Tofino switch.
+   * Servers with a 40G NIC (we used an Intel XL710 for 40GbE QSFP+) and multi-core CPU, connected by the Tofino switch.
+* Software
+   * Tofino SDK (version 9.4.0) on the switch.
+   * Python2.7 on the switch.
+   * 
+
+
+
 ## Installation
 ### Pre-Requirments for Redis
 
 * Install Redis with User-Defined Migration Functions
     ```
-    git clone https://github.com/yunyunh123/redis-KVmigration.git
-    git checkout -b zeying/KVMigration-7.0 origin/zeying/KVMigration-7.0
+    git clone https://github.com/zzylol/redis.git
+    git checkout -b KVMigration-7.0 origin/KVMigration-7.0
     make && sudo make install 
     ```
 * Install [gRPC and Protocol Buffers](https://grpc.io/docs/languages/cpp/quickstart/).
@@ -61,6 +72,8 @@ make
 
 ### Compile and Run Switch Code
 [Tofino switch P4 code and controller README](tna_kv_migration/README.md)
+
+(**Note for FAST'24 artifact evaluation process**: We can provide testbed with Tofino SDK installed if needed.)
 
 ## Run Migration Experiments  
 
