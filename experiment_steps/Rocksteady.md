@@ -38,8 +38,9 @@ cd NetMigrate/cpp/server/Rocksteady
 bash run_src_push.sh
 ```
 
-## Limit Source redis CPU
-For parameter 70% and 40% source redis CPU limit:
+## Limit Source Redis CPU
+If limit source Redis CPU to mimic load-balancing scenario, e.g., 70% and 40% source redis CPU limit:
+
 use this:
 ```
 ps aux | grep redis
