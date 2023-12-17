@@ -18,21 +18,6 @@ redis-server --protected-mode no --port 6380 --save "" --appendonly no&
 cd NetMigrate/cpp/server/Fulva
 bash run_src_pull.sh
 ```
-Note: We can only run source pull to test PriorityPull implementation/performance.
-
-## Limit Source redis CPU
-For parameter 70% and 40% source redis CPU limit:
-use this:
-```
-ps aux | grep redis
-cpulimit -p $(redis-server-pid) -l 70
-```
-
-```
-ps aux | grep redis
-cpulimit -p $(redis-server-pid) -l 40
-```
-
 
 ## Start destination migration agent
 Run destination script first.
@@ -54,3 +39,18 @@ After running client of about 200 seconds, in source server:
 cd NetMigrate/cpp/server/Fulva
 bash run_src_push.sh
 ```
+
+## Limit Source Redis CPU
+If limit source Redis CPU to mimic load-balancing scenario, e.g., 70% and 40% source redis CPU limit:
+
+use this:
+```
+ps aux | grep redis
+cpulimit -p 1234 -l 70
+```
+
+```
+ps aux | grep redis
+cpulimit -p 1234 -l 40
+```
+
