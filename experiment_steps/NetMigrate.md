@@ -1,18 +1,5 @@
 # Run Migration  
 
-## Limit Source redis CPU
-For parameter 70% and 40% source redis CPU limit:
-use this:
-```
-ps aux | grep redis
-cpulimit -p 1234 -l 70
-```
-
-```
-ps aux | grep redis
-cpulimit -p 1234 -l 40
-```
-
 ## Start redis-server 
 In destination:
 ```
@@ -41,6 +28,19 @@ bash run_dst.sh
 ```
 cd NetMigrate/cpp/server/NetMigrate
 bash run_src_push.sh
+```
+## Limit Source Redis CPU
+If limit source Redis CPU to mimic load-balancing scenario, e.g., 70% and 40% source redis CPU limit:
+
+use this:
+```
+ps aux | grep redis
+cpulimit -p 1234 -l 70
+```
+
+```
+ps aux | grep redis
+cpulimit -p 1234 -l 40
 ```
 
 
