@@ -8,11 +8,6 @@ sudo kill -9 xxxx (redis pid)
 redis-server --protected-mode no --port 7380 --save "" --appendonly no&
 ```
 
-## Start source redis-server in source machine
-```
-redis-server --protected-mode no --port 6380 --save "" --appendonly no&
-```
-
 ## Start source priority pull server
 ```
 cd NetMigrate/cpp/server/Fulva
@@ -41,7 +36,7 @@ bash run_src_push.sh
 ```
 
 ## Limit Source Redis CPU
-If limit source Redis CPU to mimic load-balancing scenario, e.g., 70% and 40% source redis CPU limit:
+If limiting source Redis CPU to mimic load-balancing scenario, e.g., 70% and 40% source redis CPU limit:
 
 use this:
 ```
