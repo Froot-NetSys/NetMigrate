@@ -1,18 +1,5 @@
 # Run Migration  
 
-## Limit Source redis CPU
-For parameter 70% and 40% source redis CPU limit:
-use this:
-```
-ps aux | grep redis
-cpulimit -p 1234 -l 70
-```
-
-```
-ps aux | grep redis
-cpulimit -p 1234 -l 40
-```
-
 ## Start Destination Redis-server 
 In destination:
 ```
@@ -49,6 +36,19 @@ After running client for about 200 seconds, in source server:
 ```
 cd NetMigrate/cpp/server/Rocksteady
 bash run_src_push.sh
+```
+
+## Limit Source redis CPU
+For parameter 70% and 40% source redis CPU limit:
+use this:
+```
+ps aux | grep redis
+cpulimit -p 1234 -l 70
+```
+
+```
+ps aux | grep redis
+cpulimit -p 1234 -l 40
 ```
 
 
