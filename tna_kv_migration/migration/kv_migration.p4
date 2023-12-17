@@ -661,22 +661,22 @@ control KVMigrationIngress(
 
     action get_hash_bf_1() {
         mg_md.hash_values.bf_1 = bf_hash_1.get({mg_md.bucket_id_addr, mg_md.bucket_id_port, mg_md.bucket_id_s1});
-        mg_md.hash_values.cbf_1 = mg_md.hash_values.bf_1[3:0];
+        mg_md.hash_values.cbf_1 = mg_md.hash_values.bf_1[15:0];
     }
 
     action get_hash_bf_2() {
         mg_md.hash_values.bf_2 = bf_hash_2.get({mg_md.bucket_id_addr, mg_md.bucket_id_port, mg_md.bucket_id_s1});
-        mg_md.hash_values.cbf_2 = mg_md.hash_values.bf_2[3:0];
+        mg_md.hash_values.cbf_2 = mg_md.hash_values.bf_2[15:0];
     }
 
     action get_hash_bf_3() {
         mg_md.hash_values.bf_3 = bf_hash_3.get({mg_md.bucket_id_addr, mg_md.bucket_id_port, mg_md.bucket_id_s1});
-        mg_md.hash_values.cbf_3 = mg_md.hash_values.bf_3[3:0];
+        mg_md.hash_values.cbf_3 = mg_md.hash_values.bf_3[15:0];
     }
 
     action get_hash_bf_4() {
         mg_md.hash_values.bf_4 = bf_hash_4.get({mg_md.bucket_id_addr, mg_md.bucket_id_port, mg_md.bucket_id_s1});
-        mg_md.hash_values.cbf_4 = mg_md.hash_values.bf_4[3:0];
+        mg_md.hash_values.cbf_4 = mg_md.hash_values.bf_4[15:0];
     }
 
     action get_hash_rf_1() {
