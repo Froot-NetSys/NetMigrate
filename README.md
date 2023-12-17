@@ -53,9 +53,12 @@ make
 Build source-migration baseline:
 ```
 cd $NetMigrate/cpp/server/Source-protocol/
+cd server-agent
+make
+cd ../migration_agent_udp
 mkdir build && cd build
 cmake -DCMAKE_PREFIX_PATH=$GRPC_INSTALL_DIR ..
-make 
+make
 ```
 
 Build NetMigrate: 
