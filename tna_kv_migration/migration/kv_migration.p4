@@ -1,18 +1,12 @@
 /* -*- P4_16 -*- */
 
-/*
-    Copyright (C) 2023 Zeying Zhu, University of Maryland, College Park
-    This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU Affero General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU Affero General Public License for more details.
-    You should have received a copy of the GNU Affero General Public License
-    along with this program.  If not, see <https://www.gnu.org/licenses/>.
-*/
+/*******************************************************************************
+ * BAREFOOT NETWORKS CONFIDENTIAL & PROPRIETARY
+ *
+ * Copyright (c) Intel Corporation
+ * SPDX-License-Identifier: CC-BY-ND-4.0
+ */
+
 
 
 #include <core.p4>
@@ -667,22 +661,22 @@ control KVMigrationIngress(
 
     action get_hash_bf_1() {
         mg_md.hash_values.bf_1 = bf_hash_1.get({mg_md.bucket_id_addr, mg_md.bucket_id_port, mg_md.bucket_id_s1});
-        mg_md.hash_values.cbf_1 = mg_md.hash_values.bf_1[17:0];
+        mg_md.hash_values.cbf_1 = mg_md.hash_values.bf_1[3:0];
     }
 
     action get_hash_bf_2() {
         mg_md.hash_values.bf_2 = bf_hash_2.get({mg_md.bucket_id_addr, mg_md.bucket_id_port, mg_md.bucket_id_s1});
-        mg_md.hash_values.cbf_2 = mg_md.hash_values.bf_2[17:0];
+        mg_md.hash_values.cbf_2 = mg_md.hash_values.bf_2[3:0];
     }
 
     action get_hash_bf_3() {
         mg_md.hash_values.bf_3 = bf_hash_3.get({mg_md.bucket_id_addr, mg_md.bucket_id_port, mg_md.bucket_id_s1});
-        mg_md.hash_values.cbf_3 = mg_md.hash_values.bf_3[17:0];
+        mg_md.hash_values.cbf_3 = mg_md.hash_values.bf_3[3:0];
     }
 
     action get_hash_bf_4() {
         mg_md.hash_values.bf_4 = bf_hash_4.get({mg_md.bucket_id_addr, mg_md.bucket_id_port, mg_md.bucket_id_s1});
-        mg_md.hash_values.cbf_4 = mg_md.hash_values.bf_4[17:0];
+        mg_md.hash_values.cbf_4 = mg_md.hash_values.bf_4[3:0];
     }
 
     action get_hash_rf_1() {
@@ -705,10 +699,11 @@ control KVMigrationIngress(
     }
 
     Hash<bit<32>>(HashAlgorithm_t.CRC32) crc32_sig;
-        
+    /*    
     action get_pkt_signature(){
         mg_md.hash_values.rf_signature=crc32_sig.get({hdr.mg_hdr.seq, hdr.ipv4.dstAddr, hdr.udp.dstPort});
     }
+*/
 
 
     // Migration pair table
@@ -933,7 +928,7 @@ control KVMigrationIngress(
     action counting_bloom_filter_write_r4() {
         mg_md.cbf_4 = counting_bloom_filter_write_reg_action_4.execute(mg_md.hash_values.cbf_4);
     }
-
+/*
     // reply filtering registers and actions
     #define TIMESTAMP ig_intr_md.ingress_mac_tstamp[31:0]
     #define TS_EXPIRE_THRESHOLD (200*1000*1000) 
@@ -1005,7 +1000,7 @@ control KVMigrationIngress(
             }
         }
     };
-
+*/
     /*
     action reply_filter_set_1() {
         mg_md.rf_set_success = set_reply_filter_reg_action_1.execute(mg_md.hash_values.rf_1);
@@ -1025,6 +1020,7 @@ control KVMigrationIngress(
     */
    
     apply {
+
         // if (hdr.mg_hdr.isValid()) {
             // if (hdr.udp.isValid()) 
                 hdr.udp.checksum = 0; // not use udp checksum under ipv4
@@ -1105,6 +1101,7 @@ control KVMigrationIngress(
                 counting_bloom_filter_read_r4();
             }
         }
+
 	/*
         else if (hdr.mg_hdr.op == _MG_READ_REPLY) { // control for double read replies
             get_pkt_signature();

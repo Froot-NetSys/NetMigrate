@@ -1,19 +1,3 @@
-/* -*- P4_16 -*- */
-
-/*
-    Copyright (C) 2023 Zeying Zhu, University of Maryland, College Park
-    This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU Affero General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU Affero General Public License for more details.
-    You should have received a copy of the GNU Affero General Public License
-    along with this program.  If not, see <https://www.gnu.org/licenses/>.
-*/
-
 // Client requests op
 #define _MG_READ                    0x01
 #define _MG_WRITE                   0x02
@@ -45,10 +29,10 @@
 
 // Migration Parameters
 #define _MG_MAX_MIGRATION_PAIR_ENTRIES  32
-#define _MG_MAX_BLOOM_FILTER_ENTRIES    1048576  
-#define _MG_BLOOM_FILTER_WIDTH          20
-#define _MG_COUNTING_BLOOM_FILTER_WIDTH 18
-#define _MG_COUNTING_BLOOM_FILTER_ENTRIES 262144 
+#define _MG_MAX_BLOOM_FILTER_ENTRIES    32768  
+#define _MG_BLOOM_FILTER_WIDTH          15
+#define _MG_COUNTING_BLOOM_FILTER_WIDTH 4 // 18
+#define _MG_COUNTING_BLOOM_FILTER_ENTRIES 16 // 262144 
 #define _MG_GROUP_ID_WIDTH              32
 #define _MG_REPLY_FILTER_WIDTH          32
 #define _MG_REPLY_FILTER_ENTRIES        32w65536
