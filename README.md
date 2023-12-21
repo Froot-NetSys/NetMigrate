@@ -87,7 +87,7 @@ make BIND_SOURCE=1 # build Source-based migration client
 ## Run Migration Experiments  
  
 ### 1. Start Source Redis-server instance in Source Server
-with Redis rdb and aof enabled:
+With Redis rdb and aof enabled:
 ```
 redis-server --protected-mode no --port 6380 &
 ```
@@ -106,6 +106,7 @@ bash start_src_server_agent.sh # do this at source server
 
 2. run YCSB client load
 Note: we use Rocksteady's client to load data to source redis-server for all migration protocols.
+
 In source server:
 ```
 cd $NetMigrate/cpp/YCSB-client 
