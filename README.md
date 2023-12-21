@@ -116,7 +116,7 @@ make BIND_ROCKSTEADY=1
 ```
 Loading 256 million kv pairs needs about about **2h** in our testbed. Check if the source Redis is still loading data from whether the CPU usage of it is ~0% and memory is ~33GB.
 
-(**Note for FAST'24 artifact evaluation process**: We provided a ```dumb.rdb``` Redis snapshot in the source server and loading it to the source redis-server takes only **5~10 min** by ```cd ~; redis-server --protected-mode no --port 6380 --save "" --appendonly no &```, which will load dumb.rdb into redis-server with port 6380.)
+(**Note for FAST'24 artifact evaluation process**: We provided a ```dumb.rdb``` Redis snapshot in the source server and loading it to the source redis-server takes only **~3 min** by ```cd ~; redis-server --protected-mode no --port 6380 --save "" --appendonly no &```, which will load dumb.rdb into redis-server with port 6380.)
 
 
 ### 3. Run Migration with Four Protocols
