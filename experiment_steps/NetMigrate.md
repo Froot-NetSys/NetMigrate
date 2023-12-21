@@ -46,6 +46,7 @@ cpulimit -p 1234 -l 40
 
 ## Run YCSB Clients Immediately
 ```
+cd NetMigrate/cpp/YCSB-client
 ./ycsb-kv_migration -run -db KV -P workloads/workloadc -P kv_migration/kv_migration.properties -p threadcount=8 -s > result/NetMigrate-c-16GB-100%.txt
 ```
 
