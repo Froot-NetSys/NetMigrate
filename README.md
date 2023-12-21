@@ -105,9 +105,10 @@ bash start_src_server_agent.sh # do this at source server
 ```
 
 2. run YCSB client load
+   
 Note: we use Rocksteady's client to load data to source redis-server for all migration protocols.
 
-In source server:
+In source server, load 256 million key-value pairs, each with 4-Byte key and 64-Byte value:
 ```
 cd $NetMigrate/cpp/YCSB-client 
 make BIND_ROCKSTEADY=1
