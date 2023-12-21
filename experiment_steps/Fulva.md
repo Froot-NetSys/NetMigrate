@@ -24,6 +24,7 @@ bash run_dst.sh
 
 ## Run YCSB Clients
 ```
+cd NetMigrate/cpp/YCSB-client
 ./ycsb-fulva -run -db KV -P workloads/workloadc -P Fulva/kv_migration.properties -p threadcount=8 -s > result/fulva-c-16GB-100%.txt
 ```
 
