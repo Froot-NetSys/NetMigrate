@@ -97,6 +97,7 @@ redis-server --protected-mode no --port 6380 &
 Note: 
 * change ```server_agent_start_port``` and ```thread_num``` in bash files to the same as YCSB client ```agent_start_port``` and ```thread_num``` properties if needed.
 
+In source server:
 ```
 cd $NetMigrate/cpp/server/ServerAgents/server-agent
 make 
@@ -105,6 +106,7 @@ bash start_src_server_agent.sh # do this at source server
 
 2. run YCSB client load
 Note: we use Rocksteady's client to load data to source redis-server for all migration protocols.
+In source server:
 ```
 cd $NetMigrate/cpp/YCSB-client 
 make BIND_ROCKSTEADY=1
