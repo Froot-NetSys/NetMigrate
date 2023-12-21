@@ -28,7 +28,7 @@ bash run_dst.sh
 In client server:
 ```
 cd NetMigrate/cpp/YCSB-client
-./ycsb-rocksteady -run -db KV -P workloads/workloadc -P Rocksteady/run.properties -p threadcount=8 -s > result/rocksteady-c-16GB-100%.txt
+./ycsb-rocksteady -run -db KV -P workloads/workloadc -P Rocksteady/run.properties -p threadcount=8 -s > ~/result/rocksteady-c-16GB-100%.txt
 ```
 
 ## Start source migration push to migrate data
