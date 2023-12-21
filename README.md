@@ -87,8 +87,9 @@ make BIND_SOURCE=1 # build Source-based migration client
 ## Run Migration Experiments  
  
 ### 1. Start Source Redis-server instance in Source Server
+with Redis rdb and aof enabled:
 ```
-redis-server --protected-mode no --port 6380 --save "" --appendonly no &
+redis-server --protected-mode no --port 6380 &
 ```
 
 ### 2. Load YCSB Data to Source Redis-server
