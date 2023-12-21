@@ -119,7 +119,7 @@ Loading data needs about about ** ** min in our testbed. Check if the source Red
 (**Note for FAST'24 artifact evaluation process**: We provided a ```dumb.rdb``` Redis snapshot in the source server and loading it to the source redis-server takes only ~5 min by ```cd ~; redis-server --protected-mode no --port 6380 --save "" --appendonly no &```, which will load dumb.rdb into redis-server with port 6380.)
 
 
-### 3. Run Migration for Four Protocols
+### 3. Run Migration with Four Protocols
 * [Rocksteady](experiment_steps/Rocksteady.md)
 * [Fulva](experiment_steps/Fulva.md)
 * [Source-migration](experiment_steps/Source.md)
