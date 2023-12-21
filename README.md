@@ -111,9 +111,9 @@ In source server:
 ```
 cd $NetMigrate/cpp/YCSB-client 
 make BIND_ROCKSTEADY=1
-./ycsb-rocksteady -load -db KV -P workloads/workloada -P Rocksteady/load.properties -p threadcount=4 -p recordcount=256000000000 -s # load data first
+./ycsb-rocksteady -load -db KV -P workloads/workloada -P Rocksteady/load.properties -p threadcount=4 -p recordcount=256000000 -s # load data first
 ```
-Loading data needs about about  min in our testbed. Check if the source Redis is still loading data from whether the CPU usage of it is ~0% and memory is ~52%.
+Loading data needs about about  min in our testbed. Check if the source Redis is still loading data from whether the CPU usage of it is ~0% and memory is ~33GB.
 
 ### 3. Run Migration for Four Protocols
 * [Rocksteady](experiment_steps/Rocksteady.md)
