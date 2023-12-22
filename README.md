@@ -21,9 +21,9 @@ NetMigrate is a key-value store live migration protocol by leveraging programmal
    * gRPC 1.50.0 and protobuf 3.21.6.0 for PriorityPulls between KV servers.
 
 ## Installation
-### Pre-Requirments for Redis
+### Pre-Requirments for Redis in Source and Destination servers
 
-* Install Redis with User-Defined Migration Functions
+* Install Redis with User-Defined Migration Functions 
     ```
     git clone https://github.com/zzylol/redis.git
     cd redis
