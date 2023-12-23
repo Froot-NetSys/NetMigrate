@@ -36,6 +36,26 @@ cd NetMigrate/cpp/server/Fulva
 bash run_src_push.sh
 ```
 
+After migration finishes, you will get Fulva throughput figure(Figure 4(b) in the paper) and latency figures (Figure 5(b) and 6(b) in the paper).
+
+Throughput:
+
+<p align="center">
+  <img src="./figures/fulva-b-100.png" width="500">
+</p>
+
+Median latency:
+
+<p align="center">
+  <img src="./figures/fulva-5-100-50.png" width="500">
+</p>
+
+99%-tail latency:
+
+<p align="center">
+  <img src="./figures/fulva-5-100-99.png" width="500">
+</p>
+
 ## Limit Source Redis CPU
 If limiting source Redis CPU to mimic load-balancing scenario, e.g., 70% and 40% source redis CPU limit:
 
