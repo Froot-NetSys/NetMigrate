@@ -40,7 +40,7 @@ bash run_src_push.sh
 ```
 
 You will get Figure 4(a) in the paper.
-![Rocksteady YCSB-B](figures/rocksteady-b-100)
+![Rocksteady YCSB-B](figures/rocksteady-b-100.pdf)
 
 ## Limit Source Redis CPU
 If limit source Redis CPU to mimic load-balancing scenario, e.g., 70% and 40% source redis CPU limit:
