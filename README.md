@@ -20,6 +20,12 @@ NetMigrate is a key-value store live migration protocol by leveraging programmal
    * Python2.7 on the switch.
    * gRPC 1.50.0 and protobuf 3.21.6.0 for PriorityPulls in KV servers.
 
+Experimental setup:
+
+<p align="center">
+  <img src=".experiment_steps/figures/system_overview.png" width="500">
+</p>
+
 ## Installation
 ### 1. Pre-Requirments for Redis in Source and Destination servers
 
