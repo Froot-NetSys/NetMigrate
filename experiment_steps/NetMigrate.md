@@ -24,7 +24,7 @@ bash run_dst.sh
 ```
 
 ## Start source migration push to migrate data
-
+In another terminal in the source server:
 ```
 cd NetMigrate/cpp/server/NetMigrate
 bash run_src_push.sh
@@ -45,6 +45,7 @@ cpulimit -p 1234 -l 40
 
 
 ## Run YCSB Clients Immediately
+(because we start migration after 200 sec in NetMigrate server agent code.)
 ```
 cd NetMigrate/cpp/YCSB-client
 ./ycsb-kv_migration -run -db KV -P workloads/workloadc -P kv_migration/kv_migration.properties -p threadcount=8 -s > result/NetMigrate-c-16GB-100%.txt
