@@ -37,7 +37,7 @@ bash source_migr.sh
 
 ```
 cd NetMigrate/cpp/YCSB-client
-./ycsb-source -run -db KV -P workloads/workloadc  -P Source/run.properties -p threadcount=8 -s > result/source-c-16GB-100%.txt
+./ycsb-source -run -db KV -P workloads/workloadb  -P Source/run.properties -p threadcount=8 -s > result/source-b-100%.txt
 ```
 
 After migration finishes, you will get Source-protocol throughput figure(Figure 4(c) in the paper) and latency figures (Figure 5(c) and 6(c) in the paper).
