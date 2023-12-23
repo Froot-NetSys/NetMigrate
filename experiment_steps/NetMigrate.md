@@ -11,13 +11,14 @@ redis-server --protected-mode no --port 7380 --save "" --appendonly no&
 ## Restart Switchd and controller
 
 ## Start source priority pull 
+In source server:
 ```
 cd NetMigrate/cpp/server/NetMigrate
 bash run_src_pull.sh
 ```
 
 ## Start destination migration agent
-Run destination script first.
+In destination server:
 ```
 cd NetMigrate/cpp/server/NetMigrate
 bash run_dst.sh
@@ -31,7 +32,8 @@ bash run_src_push.sh
 ```
 
 ## Run YCSB Clients Immediately
-(because we start migration after 200 sec in NetMigrate server agent code.)
+(because we start migration after 300 sec in NetMigrate server agent code.)
+In client server:
 ```
 cd NetMigrate/cpp/YCSB-client
 ./ycsb-kv_migration -run -db KV -P workloads/workloadb -P kv_migration/kv_migration.properties -p threadcount=8 -s > ~/result/netmigrate-b-100%.txt
