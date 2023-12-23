@@ -33,7 +33,7 @@ cd NetMigrate/cpp/YCSB-client
 
 ## Start source migration push to migrate data
 
-After running client for a while (e.g., ~200 seconds), in source server:
+After running client for a while (e.g., ~200 seconds), in another terminal in source server:
 ```
 cd NetMigrate/cpp/server/Rocksteady
 bash run_src_push.sh
