@@ -32,7 +32,7 @@ NetMigrate is a key-value store live migration protocol by leveraging programmal
     ```
 * Install [gRPC and Protocol Buffers](https://grpc.io/docs/languages/cpp/quickstart/).
 * Install [redis-plus-plus and hiredis](https://github.com/sewenew/redis-plus-plus?tab=readme-ov-file#installation)
-* Install [cpulimit](https://github.com/opsengine/cpulimit?tab=readme-ov-file#install-instructions)
+* Install [cpulimit](https://github.com/opsengine/cpulimit?tab=readme-ov-file#install-instructions) (optional, for load-balancing scenario experiments)
 
 ### 2. Compile Migration Agents in Source and Destination KVS Servers
 Build Fulva baseline:
