@@ -1,7 +1,7 @@
 # Run Migration  
 
 ## Start redis-server 
-In destination:
+In destination server:
 ```
 ps aux | grep redis # check existing redis-server
 sudo kill -9 xxxx (redis pid)
@@ -17,10 +17,10 @@ cd KV_Migration/cpp/server/Source-protocol/
 bash destination_migr.sh
 ```
 
-In another terminal:
+In another terminal in destination server:
 ```
 cd NetMigrate/cpp/server/Source-protocol/server_agent/
-bash start_dst_server_agent_4.sh
+bash start_dst_server_agent.sh
 ```
 
 
@@ -34,6 +34,7 @@ bash source_migr.sh
 
 
 ## Run YCSB Clients Immetiately
+In client server:
 
 ```
 cd NetMigrate/cpp/YCSB-client
