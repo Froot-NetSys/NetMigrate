@@ -21,7 +21,7 @@ NetMigrate is a key-value store live migration protocol by leveraging programmal
    * gRPC 1.50.0 and protobuf 3.21.6.0 for PriorityPulls in KV servers.
 
 ## Installation
-### Pre-Requirments for Redis in Source and Destination servers
+### 1. Pre-Requirments for Redis in Source and Destination servers
 
 * Install Redis with User-Defined Migration Functions 
     ```
@@ -33,7 +33,7 @@ NetMigrate is a key-value store live migration protocol by leveraging programmal
 * Install [gRPC and Protocol Buffers](https://grpc.io/docs/languages/cpp/quickstart/).
 * Install [redis-plus-plus and hiredis](https://github.com/sewenew/redis-plus-plus?tab=readme-ov-file#installation)
 
-### Compile Migration Agents in Source and Destination KVS Servers
+### 2. Compile Migration Agents in Source and Destination KVS Servers
 Build Fulva baseline:
 ```
 cd $NetMigrate/cpp/server/Fulva/
@@ -69,7 +69,7 @@ cmake -DCMAKE_PREFIX_PATH=$GRPC_INSTALL_DIR ..
 make 
 ```
 
-### Compile YCSB Clients in Client Servers
+### 3. Compile YCSB Clients in Client Servers
 [YCSB-client REAMDE](cpp/YCSB-client/README.md)
 ```
 cd $NetMigrate/cpp/YCSB-client
@@ -79,7 +79,7 @@ make BIND_ROCKSTEADY=1 # build Rocksteady client
 make BIND_SOURCE=1 # build Source-based migration client
 ```
 
-### Compile and Run Switch Code in Switch
+### 4. Compile and Run Switch Code in Switch
 [Tofino switch P4 code and controller README](tna_kv_migration/README.md)
 
 (**Note for FAST'24 artifact evaluation process**: We can provide testbed with Tofino SDK installed if needed.)
@@ -93,12 +93,12 @@ make BIND_SOURCE=1 # build Source-based migration client
 
 If you want to load from YCSB clients (Loading 256 million kv pairs needs about about **2h** in our testbed. Check if the source Redis is still loading data from whether the CPU usage of it is ~0% and memory is ~33GB):
 
-0. With Redis rdb and aof enabled 
+1. With Redis rdb and aof enabled 
 ```
 redis-server --protected-mode no --port 6380 &
 ```
 
-1. Start Source Request Server Agents
+2. Start Source Request Server Agents
 Note: 
 * change ```server_agent_start_port``` and ```thread_num``` in bash files to the same as YCSB client ```agent_start_port``` and ```thread_num``` properties if needed.
 
@@ -109,7 +109,7 @@ make
 bash start_src_server_agent.sh # do this at source server
 ```
 
-2. run YCSB client load
+3. run YCSB client load
    
 Note: we use Rocksteady's client to load data to source redis-server for all migration protocols.
 
