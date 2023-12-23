@@ -53,7 +53,7 @@ make
 Build source-migration baseline:
 ```
 cd $NetMigrate/cpp/server/Source-protocol/
-cd server-agent
+cd server_agent
 make
 cd ../migration_agent_udp
 mkdir build && cd build
