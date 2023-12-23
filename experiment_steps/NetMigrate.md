@@ -37,7 +37,7 @@ cd NetMigrate/cpp/YCSB-client
 ./ycsb-kv_migration -run -db KV -P workloads/workloadb -P kv_migration/kv_migration.properties -p threadcount=8 -s > ~/result/NetMigrate-b-16GB-100%.txt
 ```
 
-After migration finishes, you will get Rocksteady throughput figure(Figure 4(d) in the paper) and latency figures (Figure 5(d) and 6(d) in the paper).
+After migration finishes, you will get NetMigrate throughput figure(Figure 4(d) in the paper) and latency figures (Figure 5(d) and 6(d) in the paper).
 
 Throughput:
 
