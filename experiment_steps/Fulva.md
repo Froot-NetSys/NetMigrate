@@ -30,7 +30,7 @@ cd NetMigrate/cpp/YCSB-client
 
 ## Start source migration push to migrate data
 
-After running client of about 200 seconds, in source server:
+After running client of about 200 seconds, in another terminal in source server:
 ```
 cd NetMigrate/cpp/server/Fulva
 bash run_src_push.sh
