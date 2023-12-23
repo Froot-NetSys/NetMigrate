@@ -57,7 +57,7 @@ cd server_agent
 make
 cd ../migration_agent_udp
 mkdir build && cd build
-cmake -DCMAKE_PREFIX_PATH=$GRPC_INSTALL_DIR ..
+cmake ..
 make
 ```
 
