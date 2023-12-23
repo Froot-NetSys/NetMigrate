@@ -39,8 +39,26 @@ cd NetMigrate/cpp/server/Rocksteady
 bash run_src_push.sh
 ```
 
-You will get Figure 4(a) in the paper.
-![Rocksteady YCSB-B](./figures/rocksteady-b-100.png)
+You will get Rocksteady throughput figure(Figure 4(a) in the paper) and latency figures (Figure 5(a) and 6(a) in the paper).
+
+Throughput:
+
+<p align="center">
+  <img src="./figures/rocksteady-b-100.png" width="500">
+</p>
+
+Median latency:
+
+<p align="center">
+  <img src="./figures/rocksteady-5-100-50.png" width="500">
+</p>
+
+99%-tail latency:
+
+<p align="center">
+  <img src="./figures/rocksteady-5-100-99.png" width="500">
+</p>
+
 
 ## Limit Source Redis CPU
 If limit source Redis CPU to mimic load-balancing scenario, e.g., 70% and 40% source redis CPU limit:
