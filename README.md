@@ -123,6 +123,9 @@ make BIND_ROCKSTEADY=1
 
 
 ### 2. Run Migration with Four Protocols
+Notes: 
+1. Before running a new experiment, kill and restart previous redis-server in both source and destination servers.
+2. Before running a new NetMigrate experiment, restart the switchd on the switch.
 * [Rocksteady](experiment_steps/Rocksteady.md)
 * [Fulva](experiment_steps/Fulva.md)
 * [Source-migration](experiment_steps/Source.md)
