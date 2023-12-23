@@ -28,7 +28,7 @@ bash run_dst.sh
 In client server:
 ```
 cd NetMigrate/cpp/YCSB-client
-./ycsb-rocksteady -run -db KV -P workloads/workloadc -P Rocksteady/run.properties -p threadcount=8 -s > ~/result/rocksteady-c-16GB-100%.txt
+./ycsb-rocksteady -run -db KV -P workloads/workloadb -P Rocksteady/run.properties -p threadcount=8 -s > ~/result/rocksteady-b-16GB-100%.txt
 ```
 
 ## Start source migration push to migrate data
@@ -38,6 +38,9 @@ After running client for a while (e.g., ~200 seconds), in source server:
 cd NetMigrate/cpp/server/Rocksteady
 bash run_src_push.sh
 ```
+
+You will get Figure 4(a) in the paper.
+![Rocksteady YCSB-B](figures/rocksteady-b-16GB-100)
 
 ## Limit Source Redis CPU
 If limit source Redis CPU to mimic load-balancing scenario, e.g., 70% and 40% source redis CPU limit:
