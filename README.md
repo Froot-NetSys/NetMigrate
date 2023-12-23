@@ -18,7 +18,7 @@ NetMigrate is a key-value store live migration protocol by leveraging programmal
 * Software
    * Tofino SDK (version 9.4.0) on the switch.
    * Python2.7 on the switch.
-   * gRPC 1.50.0 and protobuf 3.21.6.0 for PriorityPulls between KV servers.
+   * gRPC 1.50.0 and protobuf 3.21.6.0 for PriorityPulls in KV servers.
 
 ## Installation
 ### Pre-Requirments for Redis in Source and Destination servers
