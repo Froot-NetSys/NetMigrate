@@ -34,7 +34,7 @@ bash run_src_push.sh
 (because we start migration after 200 sec in NetMigrate server agent code.)
 ```
 cd NetMigrate/cpp/YCSB-client
-./ycsb-kv_migration -run -db KV -P workloads/workloadb -P kv_migration/kv_migration.properties -p threadcount=8 -s > ~/result/NetMigrate-b-16GB-100%.txt
+./ycsb-kv_migration -run -db KV -P workloads/workloadb -P kv_migration/kv_migration.properties -p threadcount=8 -s > ~/result/NetMigrate-b-100%.txt
 ```
 
 After migration finishes, you will get NetMigrate throughput figure(Figure 4(d) in the paper) and latency figures (Figure 5(d) and 6(d) in the paper).
