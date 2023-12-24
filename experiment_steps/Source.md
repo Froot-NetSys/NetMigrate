@@ -42,6 +42,7 @@ cd NetMigrate/cpp/YCSB-client
 ```
 
 After migration finishes, you will get Source-protocol throughput figure(Figure 4(c) in the paper) and latency figures (Figure 5(c) and 6(c) in the paper).
+You can draw from the raw data output by the client using ```./figures/draw.py```.
 
 Throughput:
 
