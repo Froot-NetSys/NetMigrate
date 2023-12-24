@@ -41,8 +41,8 @@ cd NetMigrate/cpp/YCSB-client
 ./ycsb-source -run -db KV -P workloads/workloadb  -P Source/run.properties -p threadcount=8 -s > ~/result/source-b-100%.txt
 ```
 
-After migration finishes, you will get Source-protocol throughput figure(Figure 4(c) in the paper) and latency figures (Figure 5(c) and 6(c) in the paper).
-You can draw from the raw data output by the client using ```./figures/draw.py```.
+After migration finishes, you will get Source-protocol throughput figure and latency figures (below as an example).
+You can draw from the raw data output ```source-b-100.txt``` by the client using ```./figures/draw.py```.
 
 Throughput:
 
