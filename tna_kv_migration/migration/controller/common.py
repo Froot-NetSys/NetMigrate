@@ -69,8 +69,8 @@ class Constants(IntEnum):
 
 class MigrationParameters(IntEnum):
     MG_MAX_MIGRATION_PAIR_ENTRIES  = 128
-    MG_MAX_BLOOM_FILTER_ENTRIES    = 655636 # 262144  
-    MG_BLOOM_FILTER_WIDTH          = 16 # 18
+    MG_MAX_BLOOM_FILTER_ENTRIES    = 32768 # 262144  
+    MG_BLOOM_FILTER_WIDTH          = 15 # 18
     MG_COUNTING_BLOOM_FILTER_WIDTH = 4 # 16
     MG_COUNTING_BLOOM_FILTER_ENTRIES = 16# 65536
     MG_GROUP_ID_WIDTH              = 32 # this is only for group_id
