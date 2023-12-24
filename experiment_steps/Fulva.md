@@ -38,8 +38,8 @@ cd NetMigrate/cpp/server/Fulva
 bash run_src_push.sh
 ```
 
-After migration finishes, you will get Fulva throughput figure(Figure 4(b) in the paper) and latency figures (Figure 5(b) and 6(b) in the paper).
-You can draw from the raw data output by the client using ```./figures/draw.py```.
+After migration finishes, you will get Fulva throughput figure and latency figures (below as an example).
+You can draw from the raw data output ```fulva-b-100.txt```by the client using ```./figures/draw.py```.
 
 Throughput:
 
