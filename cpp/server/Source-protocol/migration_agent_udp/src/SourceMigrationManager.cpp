@@ -66,7 +66,7 @@ void MigrationManager::ScanKVPairsThread(unsigned long size_exp, uint16_t dbPort
         auto end = std::chrono::high_resolution_clock::now();
         auto time_elapsed = std::chrono::duration_cast<std::chrono::milliseconds>(end - migration_timer);
         if (time_elapsed.count() >= CHECK_PERIOD) { // 1 second
-          std::cout << "total_migration_op/s=" << migration_op << std::endl;
+          // std::cout << "total_migration_op/s=" << migration_op << std::endl;
           migration_op = 0;
           migration_timer = std::chrono::high_resolution_clock::now();
         }
