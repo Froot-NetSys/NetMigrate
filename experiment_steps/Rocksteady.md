@@ -39,8 +39,8 @@ cd NetMigrate/cpp/server/Rocksteady
 bash run_src_push.sh
 ```
 
-You will get Rocksteady throughput figure(Figure 4(a) in the paper) and latency figures (Figure 5(a) and 6(a) in the paper).
-You can draw from the raw data output by the client using ```./figures/draw.py```.
+You will get Rocksteady throughput figure and latency figures (below as an example).
+You can draw from the raw data output ```rocksteady-b-100.txt```by the client using ```./figures/draw.py```.
 
 Throughput:
 
