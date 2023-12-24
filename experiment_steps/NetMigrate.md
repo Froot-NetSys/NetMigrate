@@ -39,8 +39,8 @@ cd NetMigrate/cpp/YCSB-client
 ./ycsb-kv_migration -run -db KV -P workloads/workloadb -P kv_migration/kv_migration.properties -p threadcount=8 -s > ~/result/netmigrate-b-100%.txt
 ```
 
-After migration finishes, you will get NetMigrate throughput figure(Figure 4(d) in the paper) and latency figures (Figure 5(d) and 6(d) in the paper).
-You can draw from the raw data output by the client using ```./figures/draw.py```.
+After migration finishes, you will get NetMigrate throughput figure and latency figures (below as an example).
+You can draw from the raw data output ```netmigrate-b-100.txt``` by the client using ```./figures/draw.py```.
 
 Throughput:
 
