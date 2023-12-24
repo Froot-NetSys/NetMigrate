@@ -35,6 +35,7 @@ port-enb -/-
 ```
 
 ## Manually set up ARP in end-hosts
+We need to manually add static ARP entries in 3 servers.
 ```
 sudo arp -s remote_ip remote_mac
 ```

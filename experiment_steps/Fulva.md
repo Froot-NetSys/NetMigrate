@@ -8,34 +8,15 @@ sudo kill -9 xxxx (redis pid)
 redis-server --protected-mode no --port 7380 --save "" --appendonly no&
 ```
 
-## Start source redis-server in source machine
-```
-redis-server --protected-mode no --port 6380 --save "" --appendonly no&
-```
-
 ## Start source priority pull server
+In source server:
 ```
 cd NetMigrate/cpp/server/Fulva
 bash run_src_pull.sh
 ```
-Note: We can only run source pull to test PriorityPull implementation/performance.
-
-## Limit Source redis CPU
-For parameter 70% and 40% source redis CPU limit:
-use this:
-```
-ps aux | grep redis
-cpulimit -p $(redis-server-pid) -l 70
-```
-
-```
-ps aux | grep redis
-cpulimit -p $(redis-server-pid) -l 40
-```
-
 
 ## Start destination migration agent
-Run destination script first.
+In destination server: 
 ```
 cd NetMigrate/cpp/server/Fulva
 bash run_dst.sh
@@ -43,14 +24,52 @@ bash run_dst.sh
 
 
 ## Run YCSB Clients
+In client server:
 ```
-./ycsb-fulva -run -db KV -P workloads/workloadc -P Fulva/kv_migration.properties -p threadcount=8 -s > result/fulva-c-16GB-100%.txt
+cd NetMigrate/cpp/YCSB-client
+./ycsb-fulva -run -db KV -P workloads/workloadb -P Fulva/kv_migration.properties -p threadcount=8 -s > ~/result/fulva-b-100%.txt
 ```
 
 ## Start source migration push to migrate data
 
-After running client of about 200 seconds, in source server:
+After running client of about 200 seconds, in another terminal in source server:
 ```
 cd NetMigrate/cpp/server/Fulva
 bash run_src_push.sh
 ```
+
+After migration finishes, you will get Fulva throughput figure(Figure 4(b) in the paper) and latency figures (Figure 5(b) and 6(b) in the paper).
+You can draw from the raw data output by the client using ```./figures/draw.py```.
+
+Throughput:
+
+<p align="center">
+  <img src="./figures/fulva-b-100.png" width="500">
+</p>
+
+Median latency:
+
+<p align="center">
+  <img src="./figures/fulva-5-100-50.png" width="500">
+</p>
+
+99%-tail latency:
+
+<p align="center">
+  <img src="./figures/fulva-5-100-99.png" width="500">
+</p>
+
+## Limit Source Redis CPU
+If limiting source Redis CPU to mimic load-balancing scenario, e.g., 70% and 40% source redis CPU limit:
+
+use this:
+```
+ps aux | grep redis
+cpulimit -p 1234 -l 70
+```
+
+```
+ps aux | grep redis
+cpulimit -p 1234 -l 40
+```
+

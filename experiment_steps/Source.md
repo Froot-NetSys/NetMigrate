@@ -1,20 +1,7 @@
 # Run Migration  
 
-## Limit Source redis CPU
-For parameter 70% and 40% source redis CPU limit:
-use this:
-```
-ps aux | grep redis
-cpulimit -p 1234 -l 70
-```
-
-```
-ps aux | grep redis
-cpulimit -p 1234 -l 40
-```
-
 ## Start redis-server 
-In destination:
+In destination server:
 ```
 ps aux | grep redis # check existing redis-server
 sudo kill -9 xxxx (redis pid)
@@ -30,10 +17,10 @@ cd KV_Migration/cpp/server/Source-protocol/
 bash destination_migr.sh
 ```
 
-In another terminal:
+In another terminal in destination server:
 ```
 cd NetMigrate/cpp/server/Source-protocol/server_agent/
-bash start_dst_server_agent_4.sh
+bash start_dst_server_agent.sh
 ```
 
 
@@ -46,12 +33,47 @@ bash source_migr.sh
 ```
 
 
-
-
 ## Run YCSB Clients Immetiately
+In client server:
 
 ```
-./ycsb-source -run -db KV -P workloads/workloadc  -P Source/run.properties -p threadcount=8 -s > result/source-c-16GB-100%.txt
+cd NetMigrate/cpp/YCSB-client
+./ycsb-source -run -db KV -P workloads/workloadb  -P Source/run.properties -p threadcount=8 -s > ~/result/source-b-100%.txt
 ```
 
+After migration finishes, you will get Source-protocol throughput figure(Figure 4(c) in the paper) and latency figures (Figure 5(c) and 6(c) in the paper).
+You can draw from the raw data output by the client using ```./figures/draw.py```.
+
+Throughput:
+
+<p align="center">
+  <img src="./figures/source-b-100.png" width="500">
+</p>
+
+Median latency:
+
+<p align="center">
+  <img src="./figures/source-5-100-50.png" width="500">
+</p>
+
+99%-tail latency:
+
+<p align="center">
+  <img src="./figures/source-5-100-99.png" width="500">
+</p>
+
+
+## Limit Source Redis CPU
+If limiting source Redis CPU to mimic load-balancing scenario, e.g., 70% and 40% source redis CPU limit:
+
+use this:
+```
+ps aux | grep redis
+cpulimit -p 1234 -l 70
+```
+
+```
+ps aux | grep redis
+cpulimit -p 1234 -l 40
+```
 
