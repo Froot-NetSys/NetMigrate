@@ -40,6 +40,7 @@ cd NetMigrate/cpp/YCSB-client
 ```
 
 After migration finishes, you will get NetMigrate throughput figure(Figure 4(d) in the paper) and latency figures (Figure 5(d) and 6(d) in the paper).
+You can draw from the raw data output by the client using ```./figures/draw.py```.
 
 Throughput:
 
