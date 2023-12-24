@@ -12,7 +12,7 @@ class ScalarFormatterForceFormat(ScalarFormatter):
 
 
 baseline = ["fulva", "rocksteady", "netmigrate", "source"]
-write_ratio = ["5"]
+write_ratio = ["b"]
 cpu_limit = ["100"]
 extra_exp = [""]
 
