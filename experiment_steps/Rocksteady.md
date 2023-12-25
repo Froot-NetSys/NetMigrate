@@ -16,6 +16,8 @@ cd NetMigrate/cpp/server/Rocksteady
 bash run_src_pull.sh
 ```
 
+The parameters in ```run_src_pull.sh```, ```run_dst.sh```, ```run_src_push.sh``` mean ```Usage: Rocksteady server_type[destination, source_pull, source_push] src_redis_ip [src_redis_port,...] src_migration_agent_start_port dst_redis_ip [dst_redis_port,...] dst_migration_agent_start_port src_trans_ip dst_trans_ip migr_thread_num migr_pkt_thread_num req_thread_num redis_cli_scale_num```
+
 ## Start destination migration agent
 In destination server:
 ```
@@ -38,6 +40,7 @@ After running client for a while (e.g., ~200 seconds), in another terminal in so
 cd NetMigrate/cpp/server/Rocksteady
 bash run_src_push.sh
 ```
+
 
 You will get Rocksteady throughput figure and latency figures (below as an example).
 You can draw from the raw data output ```rocksteady-b-100.txt```by the client using ```./figures/draw.py```.
