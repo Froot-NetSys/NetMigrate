@@ -9,8 +9,8 @@ using namespace std;
 
 int main(int argc, char *argv[]) {
 
-  if (argc < 13) {
-    std::cerr << "Usage: Source_Migration server_type[destination, source] src_trans_ip dst_trans_ip src_redis_port dst_redis_port src_migration_agent_start_port dst_migration_agent_start_port src_kv_start_port dst_kv_start_port migr_thread_num migr_pkt_thread_num redis_scale_num" << std::endl;
+  if (argc < 15) {
+    std::cerr << "Usage: Source_Migration server_type[destination, source] src_trans_ip dst_trans_ip src_redis_port dst_redis_port src_migration_agent_start_port dst_migration_agent_start_port src_kv_start_port dst_kv_start_port migr_thread_num migr_pkt_thread_num req_thread_num redis_scale_num client_start_port" << std::endl;
     return 1;
   }
 
