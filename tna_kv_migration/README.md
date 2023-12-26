@@ -1,7 +1,7 @@
 The experiments are done with bf-sde-9.4.0 and python2.
 
 # P4Studio setup
-Run the configration script:
+Set the environmental variables:
 ```
 source ~/.bashrc
 ```
