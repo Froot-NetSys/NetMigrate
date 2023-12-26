@@ -10,17 +10,17 @@ redis-server --protected-mode no --port 7380 --save "" --appendonly no&
 
 
 ## Start source priority pull 
-In source server:
+In source server, start source migration agent's gRPC server:
 ```
 cd NetMigrate/cpp/server/Rocksteady
-bash run_src_pull.sh # start source migration agent's gRPC server.
+bash run_src_pull.sh 
 ```
 
 ## Start destination migration agent
-In destination server:
+In destination server, start destination migration agent:
 ```
 cd NetMigrate/cpp/server/Rocksteady
-bash run_dst.sh # start destination migration agent.
+bash run_dst.sh 
 ```
 
 
@@ -33,10 +33,10 @@ cd NetMigrate/cpp/YCSB-client
 
 ## Start source migration push to migrate data
 
-After running client for a while (e.g., ~200 seconds), in another terminal in source server:
+After running client for a while (e.g., ~200 seconds), in another terminal in source server, start source migration agent:
 ```
 cd NetMigrate/cpp/server/Rocksteady
-bash run_src_push.sh # start source migration agent
+bash run_src_push.sh 
 ```
 
 
