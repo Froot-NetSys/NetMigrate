@@ -2,6 +2,24 @@
 
 NetMigrate is a key-value store live migration protocol by leveraging programmalbe switches. NetMigrate migrates KVS shards between nodes with zero service interruption and minimal performance impact. During migration, the switch data plane monitors the migration process in a fine-grained manner and directs client queries to the right server in real time.
 
+## FAST’24 Artifact Evaluation Only
+For FAST Artifact Evlauation, we provide a local testbed with everything installed. Please share your ssh public key for evaluation via HotCRP.
+
+### Run Migration with Four Protocols
+0. Setup environment variables.
+```
+export $NetMigrate=~/fast_ae/NetMigrate/
+```
+Notes: 
+1. Before running a new experiment, kill and restart previous redis-server in both source and destination servers.
+2. Before running a new NetMigrate experiment, ctrl-C the switchd and controller program and restart switchd and controller on the switch using commands in [Tofino switch P4 code and controller README](tna_kv_migration/README.md).
+3. The actual hardware is different, so the performance will change.
+* [Rocksteady](experiment_steps/Rocksteady.md)
+* [Fulva](experiment_steps/Fulva.md)
+* [Source-migration](experiment_steps/Source.md)
+* [NetMigrate](experiment_steps/NetMigrate.md)
+
+
 ## Content
 * cpp/
     * server/: 4 migration protocols' server agents.
