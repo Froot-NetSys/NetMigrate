@@ -41,11 +41,11 @@ bash run_src_push.sh
 In client server:
 ```
 cd NetMigrate/cpp/YCSB-client
-./ycsb-kv_migration -run -db KV -P workloads/workloadb -P kv_migration/kv_migration.properties -p threadcount=8 -s > ~/result/netmigrate-b-100%.txt
+./ycsb-kv_migration -run -db KV -P workloads/workloadb -P kv_migration/kv_migration.properties -p threadcount=8 -s > ~/result/netmigrate-b-100.txt
 ```
 
-After migration finishes, you will get NetMigrate throughput figure and latency figures (below as an example).
-You can draw from the raw data output ```netmigrate-b-100.txt``` by the client using ```./figures/draw.py```.
+After migration finishes, you will get the raw data output ```~/result/netmigrate-b-100.txt``` in client server. You can draw throughput and latency figures from it using ```$NetMigrate/experiment_steps/figures/draw.py```. The trend in the figures will be similar as the below examples.
+
 
 Throughput:
 
