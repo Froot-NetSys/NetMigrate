@@ -6,14 +6,22 @@ NetMigrate is a key-value store live migration protocol by leveraging programmal
 For FAST Artifact Evlauation, we provide a local testbed with everything installed. Please share your ssh public key for evaluation via HotCRP.
 
 ### Run Migration with Four Protocols
-0. Setup environment variables.
+0. Setup environment variables in netx7, netx5, and next4 servers.
 ```
-export $NetMigrate=~/fast_ae/NetMigrate/
+export NetMigrate=~/fast_ae/NetMigrate/
 ```
+We use netx7 as the source server, netx5 as the destination server, and netx4 as the client.
+
 Notes: 
 1. Before running a new experiment, kill and restart previous redis-server in both source and destination servers.
 2. Before running a new NetMigrate experiment, ctrl-C the switchd and controller program and restart switchd and controller on the switch using commands in [Tofino switch P4 code and controller README](tna_kv_migration/README.md).
-3. The actual hardware is different, so the performance will change.
+   ```
+   cd $SDE/
+   ./run_switchd.sh -p kv_migration
+   cd tna_kv_migration/migration/controller
+   python kv_controller.py
+   ```
+4. The actual hardware is different, so the performance will change.
 * [Rocksteady](experiment_steps/Rocksteady.md)
 * [Fulva](experiment_steps/Fulva.md)
 * [Source-migration](experiment_steps/Source.md)
