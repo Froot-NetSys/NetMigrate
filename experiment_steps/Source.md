@@ -42,7 +42,12 @@ cd $NetMigrate/cpp/YCSB-client
 ```
 
 After migration finishes, you will get the raw data output ```~/result/source-b-100.txt``` in client server. You can draw throughput and latency figures from it using ```$NetMigrate/experiment_steps/figures/draw.py```. The trend in the figures will be similar as the below examples.
-
+```
+cp ~/result/source-b-100.txt $NetMigrate/experiment_steps/figures/
+mkdir latency_fig
+mkdir thorughput_fig
+python3 draw.py source b 100
+```
 
 Throughput:
 
