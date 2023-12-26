@@ -18,7 +18,9 @@ cd $SDE
 ```
 cd $SDE/
 ./run_switchd.sh -p kv_migration
-#After bf-shell starts, add ports in switchd terminal(interactive mode):
+```
+After bf-shell starts, add ports in switchd terminal(interactive mode):
+```
 ucli
 pm
 port-add -/- 40G NONE
