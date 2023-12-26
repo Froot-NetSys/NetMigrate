@@ -22,11 +22,11 @@ cd $SDE/
 
 Running controller:
 ```
-cd tna_kv_migration/migration/controller
+cd $NetMigrate/tna_kv_migration/migration/controller
 python kv_controller.py
 ```
 
-Add ports in switchd:
+Add ports in switchd (interactive mode):
 ```
 ucli
 pm
@@ -38,4 +38,8 @@ port-enb -/-
 We need to manually add static ARP entries in 3 servers.
 ```
 sudo arp -s remote_ip remote_mac
+```
+
+```
+
 ```
