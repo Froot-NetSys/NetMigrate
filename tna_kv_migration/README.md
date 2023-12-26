@@ -3,7 +3,7 @@ The experiments are done with bf-sde-9.4.0 and python2.
 # P4Studio setup
 Run the configration script:
 ```
-sh fast_config.sh
+source ~/.bashrc
 ```
 or type the following commands:
 ```
