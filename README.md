@@ -8,7 +8,7 @@ For FAST Artifact Evlauation, we provide a local testbed with everything install
 **Note:** The hardware and OS kernel versions in the testbed have changed since submission. The actual performance numbers may vary.
 
 ### Run Migration with Four Protocols
-Our testbed has one Tofino Switch (netxy) and 3 servers (netx4, netx5, netx7). We use netx7 as the source server, netx5 as the destination server, and netx4 as the client.
+Our testbed has one Intel Tofino Switch (netxy) and 3 servers (netx4, netx5, netx7). We use netx7 as the source server, netx5 as the destination server, and netx4 as the client.
 
 <p align="center">
   <img src="./experiment_steps/figures/topo_testbed.png" width="500">
