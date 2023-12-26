@@ -3,7 +3,9 @@
 NetMigrate is a key-value store live migration protocol by leveraging programmalbe switches. NetMigrate migrates KVS shards between nodes with zero service interruption and minimal performance impact. During migration, the switch data plane monitors the migration process in a fine-grained manner and directs client queries to the right server in real time.
 
 ## FAST’24 Artifact Evaluation Only
-For FAST Artifact Evlauation, we provide a local testbed with everything installed. Please share your ssh public key for evaluation via HotCRP.
+For FAST Artifact Evlauation, we provide a local testbed with everything installed. Please share your ssh public key to access via HotCRP.
+
+If you encounter any problems, we are in the HopCRP to help.
 
 ### Run Migration with Four Protocols
 Our testbed has one Tofino Switch (netxy) and 3 servers (netx4, netx5, netx7). We use netx7 as the source server, netx5 as the destination server, and netx4 as the client.
