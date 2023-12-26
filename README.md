@@ -10,6 +10,12 @@ If you encounter any problems, we are in the HopCRP to help.
 ### Run Migration with Four Protocols
 Our testbed has one Tofino Switch (netxy) and 3 servers (netx4, netx5, netx7). We use netx7 as the source server, netx5 as the destination server, and netx4 as the client.
 
+<p align="center">
+  <img src="./experiment_steps/figures/topo_testbed.png" width="500">
+</p>
+
+
+
 0. Setup environment variables in netx7, netx5, and next4 servers.
 ```
 export NetMigrate=~/fast_ae/NetMigrate/
