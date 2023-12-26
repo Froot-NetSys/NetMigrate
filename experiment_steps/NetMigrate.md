@@ -13,21 +13,21 @@ redis-server --protected-mode no --port 7380 --save "" --appendonly no&
 ## Start source priority pull 
 In source server:
 ```
-cd NetMigrate/cpp/server/NetMigrate
+cd $NetMigrate/cpp/server/NetMigrate
 bash run_src_pull.sh
 ```
 
 ## Start destination migration agent
 In destination server:
 ```
-cd NetMigrate/cpp/server/NetMigrate
+cd $NetMigrate/cpp/server/NetMigrate
 bash run_dst.sh
 ```
 
 ## Start source migration push to migrate data
 In another terminal in the source server:
 ```
-cd NetMigrate/cpp/server/NetMigrate
+cd $NetMigrate/cpp/server/NetMigrate
 bash run_src_push.sh
 ```
 
@@ -35,7 +35,7 @@ bash run_src_push.sh
 (because we start migration after 300 sec in NetMigrate server agent code.)
 In client server:
 ```
-cd NetMigrate/cpp/YCSB-client
+cd $NetMigrate/cpp/YCSB-client
 ./ycsb-kv_migration -run -db KV -P workloads/workloadb -P kv_migration/kv_migration.properties -p threadcount=8 -s > ~/result/netmigrate-b-100.txt
 ```
 
