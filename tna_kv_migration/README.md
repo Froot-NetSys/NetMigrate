@@ -48,7 +48,6 @@ sudo arp -s remote_ip remote_mac
 ```
 In our testbed, set ARP entries in next4, next5, next7 servers:
 ```
-sudo arp -s 10.1.1.4 3c:fd:fe:aa:46:68
-sudo arp -s 10.1.1.5 3c:fd:fe:ab:de:f0
-sudo arp -s 10.1.1.7 3c:fd:fe:ab:e0:50
+cd ~/fast_ae
+bash set_arp.sh
 ```
