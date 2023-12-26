@@ -18,7 +18,7 @@ Notes:
    ```
    cd $SDE/
    ./run_switchd.sh -p kv_migration
-   cd tna_kv_migration/migration/controller
+   cd $NetMigrate/tna_kv_migration/migration/controller
    python kv_controller.py
    ```
 4. The actual hardware is different, so the performance will change.
