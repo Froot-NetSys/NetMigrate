@@ -12,14 +12,14 @@ redis-server --protected-mode no --port 7380 --save "" --appendonly no&
 ## Start source priority pull 
 In source server, start source migration agent's gRPC server:
 ```
-cd NetMigrate/cpp/server/Rocksteady
+cd $NetMigrate/cpp/server/Rocksteady
 bash run_src_pull.sh 
 ```
 
 ## Start destination migration agent
 In destination server, start destination migration agent:
 ```
-cd NetMigrate/cpp/server/Rocksteady
+cd $NetMigrate/cpp/server/Rocksteady
 bash run_dst.sh 
 ```
 
@@ -27,7 +27,7 @@ bash run_dst.sh
 ## Run YCSB Clients
 In client server:
 ```
-cd NetMigrate/cpp/YCSB-client
+cd $NetMigrate/cpp/YCSB-client
 ./ycsb-rocksteady -run -db KV -P workloads/workloadb -P Rocksteady/run.properties -p threadcount=8 -s > ~/result/rocksteady-b-100.txt
 ```
 
@@ -35,7 +35,7 @@ cd NetMigrate/cpp/YCSB-client
 
 After running client for a while (e.g., ~200 seconds), in another terminal in source server, start source migration agent:
 ```
-cd NetMigrate/cpp/server/Rocksteady
+cd $NetMigrate/cpp/server/Rocksteady
 bash run_src_push.sh 
 ```
 
