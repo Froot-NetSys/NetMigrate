@@ -11,14 +11,14 @@ redis-server --protected-mode no --port 7380 --save "" --appendonly no&
 ## Start source priority pull server
 In source server:
 ```
-cd NetMigrate/cpp/server/Fulva
+cd $NetMigrate/cpp/server/Fulva
 bash run_src_pull.sh
 ```
 
 ## Start destination migration agent
 In destination server: 
 ```
-cd NetMigrate/cpp/server/Fulva
+cd $NetMigrate/cpp/server/Fulva
 bash run_dst.sh
 ```
 
@@ -26,7 +26,7 @@ bash run_dst.sh
 ## Run YCSB Clients
 In client server:
 ```
-cd NetMigrate/cpp/YCSB-client
+cd $NetMigrate/cpp/YCSB-client
 ./ycsb-fulva -run -db KV -P workloads/workloadb -P Fulva/kv_migration.properties -p threadcount=8 -s > ~/result/fulva-b-100.txt
 ```
 
@@ -34,7 +34,7 @@ cd NetMigrate/cpp/YCSB-client
 
 After running client of about 200 seconds, in another terminal in source server:
 ```
-cd NetMigrate/cpp/server/Fulva
+cd $NetMigrate/cpp/server/Fulva
 bash run_src_push.sh
 ```
 
