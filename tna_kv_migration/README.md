@@ -14,25 +14,24 @@ cd $SDE
 ```
 
 ## Run switch
-Running switchd first:
+**Terminal 1** Running switchd first in one terminal and keep this terminal:
 ```
 cd $SDE/
 ./run_switchd.sh -p kv_migration
-```
-
-Running controller:
-```
-cd $NetMigrate/tna_kv_migration/migration/controller
-python kv_controller.py
-```
-
-Add ports in switchd (interactive mode):
-```
+#After bf-shell starts, add ports in switchd terminal(interactive mode):
 ucli
 pm
 port-add -/- 40G NONE
 port-enb -/-
 ```
+
+**Terminal 2**Running controller in another terminal:
+```
+cd $NetMigrate/tna_kv_migration/migration/controller
+python kv_controller.py
+```
+
+
 
 ## Manually set up ARP in end-hosts
 We need to manually add static ARP entries in 3 servers.
