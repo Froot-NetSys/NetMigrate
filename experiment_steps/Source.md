@@ -13,13 +13,13 @@ redis-server --protected-mode no --port 7380 --save "" --appendonly no&
 In destination server:
 
 ```
-cd KV_Migration/cpp/server/Source-protocol/
+cd $NetMigrate/cpp/server/Source-protocol/
 bash destination_migr.sh
 ```
 
 In another terminal in destination server:
 ```
-cd NetMigrate/cpp/server/Source-protocol/server_agent/
+cd $NetMigrate/cpp/server/Source-protocol/server_agent/
 bash start_dst_server_agent.sh
 ```
 
@@ -28,7 +28,7 @@ bash start_dst_server_agent.sh
 ## Start source migration script
 In source server:
 ```
-cd NetMigrate/cpp/server/Source-protocol/
+cd $NetMigrate/cpp/server/Source-protocol/
 bash source_migr.sh
 ```
 
@@ -37,7 +37,7 @@ bash source_migr.sh
 In client server:
 
 ```
-cd NetMigrate/cpp/YCSB-client
+cd $NetMigrate/cpp/YCSB-client
 ./ycsb-source -run -db KV -P workloads/workloadb  -P Source/run.properties -p threadcount=8 -s > ~/result/source-b-100%.txt
 ```
 
