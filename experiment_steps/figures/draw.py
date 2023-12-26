@@ -11,7 +11,9 @@ class ScalarFormatterForceFormat(ScalarFormatter):
         self.format = "%1.1f"  # Give format here
 
 
-baseline = ["fulva", "rocksteady", "netmigrate", "source"]
+# baseline = ["fulva", "rocksteady", "netmigrate", "source"]
+# write_ratio = ["b", "c", "a", "10", "20", "30"]
+baseline = ["netmigrate"]
 write_ratio = ["b"]
 cpu_limit = ["100"]
 extra_exp = [""]
