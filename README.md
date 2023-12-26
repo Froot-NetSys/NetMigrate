@@ -17,13 +17,7 @@ export NetMigrate=~/fast_ae/NetMigrate/
 Notes: 
 1. Before running a new experiment, kill and restart previous redis-server in both source and destination servers.
 2. Before running a new NetMigrate experiment, ctrl-C the switchd and controller program and restart switchd and controller on the switch using commands in [Tofino switch P4 code and controller README](tna_kv_migration/README.md).
-   ```
-   cd $SDE/
-   ./run_switchd.sh -p kv_migration
-   cd $NetMigrate/tna_kv_migration/migration/controller
-   python kv_controller.py
-   ```
-4. The actual hardware is different, so the performance will change.
+3. The actual hardware is different, so the performance will change.
 **Run Migration with Four Protocols**   
 * [Rocksteady](experiment_steps/Rocksteady.md)
 * [Fulva](experiment_steps/Fulva.md)
