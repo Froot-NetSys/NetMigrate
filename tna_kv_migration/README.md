@@ -1,7 +1,7 @@
 The experiments are done with bf-sde-9.4.0 and python2.
 
 # P4Studio setup
-Set the environmental variables:
+Set the environmen variables:
 ```
 source ~/.bashrc
 ```
@@ -13,19 +13,19 @@ export SDE_INSTALL=$SDE/install
 export PATH=$SDE_INSTALL/bin:$PATH
 ```
 # KV_Migration
-## Compile and install kv_migration project
+## Compile the kv_migration P4 program to be loaded into the switch
 ```
 cd $SDE
 ./p4_build.sh $NetMigrate/tna_kv_migration/migration/kv_migration.p4
 ```
 
-## Run switch
-**Terminal 1** Running switchd first in one terminal and keep this terminal:
+## Run switch program
+**Terminal 1:** Running switchd first in one terminal and keep this terminal:
 ```
 cd $SDE/
 ./run_switchd.sh -p kv_migration
 ```
-After bf-shell starts, add ports in switchd terminal(interactive mode):
+After *run_switchd.sh* finishes (in tens of seconds), it will enter the "bf-shell" mode. One can type commands in the shell. We will use this shell to add ports interactively:
 ```
 ucli
 pm
@@ -33,7 +33,7 @@ port-add -/- 40G NONE
 port-enb -/-
 ```
 
-**Terminal 2** Running controller in another terminal:
+**Terminal 2:** Keep Terminal 1 running. Open a new terminal to login the switch and run the following commands:
 ```
 cd $NetMigrate/tna_kv_migration/migration/controller
 python kv_controller.py
