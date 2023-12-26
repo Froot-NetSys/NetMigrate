@@ -1,8 +1,14 @@
 The experiments are done with bf-sde-9.4.0 and python2.
 
 # P4Studio setup
+Run the configration script:
 ```
-export SDE=path/to/bf-sde-9.4.0
+sh fast_config.sh
+```
+or type the following commands:
+```
+export NetMigrate=/home/zeying/NetMigrate
+export SDE=/home/zhuolong/mysde/bf-sde-9.4.0
 export SDE_INSTALL=$SDE/install
 export PATH=$SDE_INSTALL/bin:$PATH
 ```
