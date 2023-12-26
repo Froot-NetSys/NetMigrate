@@ -25,7 +25,7 @@ port-add -/- 40G NONE
 port-enb -/-
 ```
 
-**Terminal 2**Running controller in another terminal:
+**Terminal 2** Running controller in another terminal:
 ```
 cd $NetMigrate/tna_kv_migration/migration/controller
 python kv_controller.py
