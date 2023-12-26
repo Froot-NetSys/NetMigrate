@@ -13,19 +13,14 @@ redis-server --protected-mode no --port 7380 --save "" --appendonly no&
 In source server:
 ```
 cd NetMigrate/cpp/server/Rocksteady
-bash run_src_pull.sh
-```
-
-The parameters in ```run_src_pull.sh```, ```run_dst.sh```, ```run_src_push.sh``` mean 
-```
-Usage: Rocksteady server_type[destination, source_pull, source_push] src_redis_ip [src_redis_port,...] src_migration_agent_start_port dst_redis_ip [dst_redis_port,...] dst_migration_agent_start_port src_trans_ip dst_trans_ip migr_thread_num migr_pkt_thread_num req_thread_num redis_cli_scale_num
+bash run_src_pull.sh # start source migration agent's gRPC server.
 ```
 
 ## Start destination migration agent
 In destination server:
 ```
 cd NetMigrate/cpp/server/Rocksteady
-bash run_dst.sh
+bash run_dst.sh # start destination migration agent.
 ```
 
 
@@ -41,7 +36,7 @@ cd NetMigrate/cpp/YCSB-client
 After running client for a while (e.g., ~200 seconds), in another terminal in source server:
 ```
 cd NetMigrate/cpp/server/Rocksteady
-bash run_src_push.sh
+bash run_src_push.sh # start source migration agent
 ```
 
 
