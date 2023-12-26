@@ -58,7 +58,7 @@ Notes:
   <img src="./experiment_steps/figures/system_overview.png" width="500">
 </p>
 
-## Installation
+## Installation (from scratch)
 ### 1. Pre-Requirments for Redis in Source and Destination servers
 
 * Install Redis with User-Defined Migration Functions 
@@ -121,7 +121,7 @@ make BIND_SOURCE=1 # build Source-based migration client
 ### 4. Compile and Run Switch Code in Switch
 [Tofino switch P4 code and controller README](tna_kv_migration/README.md)
 
-(**Note for FAST'24 artifact evaluation process**: We can provide testbed with Tofino SDK installed if needed.)
+(**Note for FAST'24 artifact evaluation process**: We provide a testbed with Tofino SDK installed.)
 
 ## Run Migration Experiments  
 
