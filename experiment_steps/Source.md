@@ -1,7 +1,7 @@
 # Run Migration  
 
 ## Start redis-server 
-In destination server:
+In destination server (netx5):
 ```
 ps aux | grep redis # check existing redis-server
 sudo kill -9 xxxx (redis pid)
@@ -10,14 +10,14 @@ redis-server --protected-mode no --port 7380 --save "" --appendonly no&
 
 
 ## Start destination priority pull 
-In destination server:
+In destination server (netx5):
 
 ```
 cd $NetMigrate/cpp/server/Source-protocol/
 bash destination_migr.sh
 ```
 
-In another terminal in destination server:
+In another terminal in destination server (netx5):
 ```
 cd $NetMigrate/cpp/server/Source-protocol/server_agent/
 bash start_dst_server_agent.sh
@@ -26,7 +26,7 @@ bash start_dst_server_agent.sh
 
 
 ## Start source migration script
-In source server:
+In source server (netx7):
 ```
 cd $NetMigrate/cpp/server/Source-protocol/
 bash source_migr.sh
@@ -34,7 +34,7 @@ bash source_migr.sh
 
 
 ## Run YCSB Clients Immetiately
-In client server:
+In client server (netx4):
 
 ```
 cd $NetMigrate/cpp/YCSB-client
