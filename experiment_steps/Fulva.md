@@ -1,7 +1,7 @@
 # Run Migration  
 
 ## Start destination redis-server 
-In destination:
+In destination (netx5):
 ```
 ps aux | grep redis # check existing redis-server
 sudo kill -9 xxxx (redis pid)
@@ -9,14 +9,14 @@ redis-server --protected-mode no --port 7380 --save "" --appendonly no&
 ```
 
 ## Start source priority pull server
-In source server:
+In source server (netx7):
 ```
 cd $NetMigrate/cpp/server/Fulva
 bash run_src_pull.sh
 ```
 
 ## Start destination migration agent
-In destination server: 
+In destination server (netx5): 
 ```
 cd $NetMigrate/cpp/server/Fulva
 bash run_dst.sh
@@ -24,7 +24,7 @@ bash run_dst.sh
 
 
 ## Run YCSB Clients
-In client server:
+In client server (netx4):
 ```
 cd $NetMigrate/cpp/YCSB-client
 ./ycsb-fulva -run -db KV -P workloads/workloadb -P Fulva/kv_migration.properties -p threadcount=8 -s > ~/result/fulva-b-100.txt
@@ -32,7 +32,7 @@ cd $NetMigrate/cpp/YCSB-client
 
 ## Start source migration push to migrate data
 
-After running client of about 200 seconds, in another terminal in source server:
+After running client of about 200 seconds, in another terminal in source server (netx7):
 ```
 cd $NetMigrate/cpp/server/Fulva
 bash run_src_push.sh
