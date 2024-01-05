@@ -27,6 +27,7 @@ Experiment steps:
 2. Before running a new NetMigrate experiment, ctrl-C the switchd and controller program and restart switchd and controller *on the switch (netxy)* using commands in [Tofino switch P4 code and controller README](tna_kv_migration/README.md).
 3. For loading data to the source Redis instance, we provided a ```dumb.rdb``` Redis snapshot in the source server and loading it to the source redis-server takes only **~3 min** by 
 ```cd ~; redis-server --protected-mode no --port 6380 --save "" --appendonly no &```, which will load dumb.rdb into redis-server with port 6380.
+4. Each experiment requires multiple terminals and we also suggest to use tmux for long-running experiments.
 
 
 **Run Migration with Four Protocols**   

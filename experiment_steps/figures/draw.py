@@ -4,6 +4,7 @@ import matplotlib.ticker as mtick
 from matplotlib.ticker import ScalarFormatter
 import re
 import json
+import argparse
 
 
 class ScalarFormatterForceFormat(ScalarFormatter):
@@ -11,9 +12,24 @@ class ScalarFormatterForceFormat(ScalarFormatter):
         self.format = "%1.1f"  # Give format here
 
 
-baseline = ["fulva", "rocksteady", "netmigrate", "source"]
-write_ratio = ["b"]
-cpu_limit = ["100"]
+parser = argparse.ArgumentParser(description="Draw migration baseline figures")
+parser.add_argument("input_baseline")
+parser.add_argument("input_write_ratio")
+parser.add_argument("input_cpu_limit")
+args = parser.parse_args()
+
+input_baseline = args.input_baseline
+input_write_ratio = args.input_write_ratio
+input_cpu_limit = args.input_cpu_limit
+
+# baseline = ["fulva", "rocksteady", "netmigrate", "source"]
+# write_ratio = ["b", "c", "a", "10", "20", "30"]
+baseline = []
+baseline.append(input_baseline)
+write_ratio = []
+write_ratio.append(input_write_ratio)
+cpu_limit = []
+cpu_limit.append(input_cpu_limit)
 extra_exp = [""]
 
 colors = {"rocksteady": "salmon", "fulva": "darkorange",

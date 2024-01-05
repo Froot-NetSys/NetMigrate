@@ -1,7 +1,7 @@
 # Run Migration  
 
 ## Start redis-server 
-In destination server:
+In destination server (netx5):
 ```
 ps aux | grep redis # check existing redis-server
 sudo kill -9 xxxx (redis pid)
@@ -10,14 +10,14 @@ redis-server --protected-mode no --port 7380 --save "" --appendonly no&
 
 
 ## Start destination priority pull 
-In destination server:
+In destination server (netx5):
 
 ```
 cd $NetMigrate/cpp/server/Source-protocol/
 bash destination_migr.sh
 ```
 
-In another terminal in destination server:
+In another terminal in destination server (netx5):
 ```
 cd $NetMigrate/cpp/server/Source-protocol/server_agent/
 bash start_dst_server_agent.sh
@@ -26,23 +26,29 @@ bash start_dst_server_agent.sh
 
 
 ## Start source migration script
-In source server:
+In source server (netx7):
 ```
 cd $NetMigrate/cpp/server/Source-protocol/
 bash source_migr.sh
 ```
 
 
-## Run YCSB Clients Immetiately
-In client server:
+## Run YCSB Clients Immediately
+In client server (netx4):
 
 ```
 cd $NetMigrate/cpp/YCSB-client
-./ycsb-source -run -db KV -P workloads/workloadb  -P Source/run.properties -p threadcount=8 -s > ~/result/source-b-100%.txt
+./ycsb-source -run -db KV -P workloads/workloadb  -P Source/run.properties -p threadcount=8 -s > ~/result/source-b-100.txt
 ```
 
 After migration finishes, you will get the raw data output ```~/result/source-b-100.txt``` in client server. You can draw throughput and latency figures from it using ```$NetMigrate/experiment_steps/figures/draw.py```. The trend in the figures will be similar as the below examples.
-
+```
+cp ~/result/source-b-100.txt $NetMigrate/experiment_steps/figures/
+cd $NetMigrate/experiment_steps/figures/
+mkdir latency_fig
+mkdir thorughput_fig
+python3 draw.py source b 100
+```
 
 Throughput:
 
