@@ -33,7 +33,7 @@ bash source_migr.sh
 ```
 
 
-## Run YCSB Clients Immetiately
+## Run YCSB Clients Immediately
 In client server (netx4):
 
 ```
