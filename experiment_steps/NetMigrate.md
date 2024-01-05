@@ -92,5 +92,5 @@ cd $NetMigrate/cpp/server/NetMigrate/build
 make clean && make
 ```
 
-In our testbed, SRC_THRESHOLD_CLIENT can be set as 30000 or more for NetMigrate-long, around 14000 for NetMigrate-medium, and around 9000 for NetMigrate-short for Figure 4~6, (d), (e).
+// In our testbed, SRC_THRESHOLD_CLIENT can be set as 30000 or more for NetMigrate-long, around 14000 for NetMigrate-medium, and around 9000 for NetMigrate-short for Figure 4~6, (d), (e).
 
