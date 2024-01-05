@@ -83,11 +83,14 @@ cpulimit -p 1234 -l 40
 Note: for Figure 7 in the paper, we run NetMigrate-long policy with limited CPU in the source Redis.
 
 ## Run NetMigrate with different migration policies
-NetMigrate can be configured to different migration finish time.
-Currently, we can do this by setting the client query serving threshold (requests per 1000 milliseconds per thread) in the source server agent code: [SRC_THRESHOLD_CLIENT](https://github.com/Froot-NetSys/NetMigrate/blob/main/cpp/server/NetMigrate/src/include/MigrationManager.h#L43) 
+NetMigrate can be configured to different migration finish time. 
+
+Currently, we can do this by setting the client query serving threshold (SRC_THRESHOLD_CLIENT requests per 1000 milliseconds per thread) in the source server agent code: [SRC_THRESHOLD_CLIENT](https://github.com/Froot-NetSys/NetMigrate/blob/main/cpp/server/NetMigrate/src/include/MigrationManager.h#L43) 
 and recompile the NetMigrate server agent (in source server, netx7):
 ```
 cd $NetMigrate/cpp/server/NetMigrate/build
 make clean && make
 ```
+
+SRC_THRESHOLD_CLIENT can be set as 30000 or more for NetMigrate-long, ~14000 for NetMigrate-medium, and ~9000 for NetMigrate-short for Figure 4~6, (d), (e).
 
