@@ -68,7 +68,7 @@ Median latency:
 </p>
 
 ## Limit Source Redis CPU
-If limit source Redis CPU to mimic load-balancing scenario, e.g., 70% and 40% source redis CPU limit:
+If limiting source Redis CPU to mimic load-balancing scenario, e.g., 70% and 40% source Redis CPU limit:
 
 use this:
 ```
@@ -80,7 +80,7 @@ cpulimit -p 1234 -l 70
 ps aux | grep redis
 cpulimit -p 1234 -l 40
 ```
-
+Note: for Figure 7 in the paper, we run NetMigrate-long policy with limited CPU in the source Redis.
 
 
 
