@@ -40,7 +40,7 @@ using namespace sw::redis;
 
 // Control client op and migration op CPU occupation 
 #define SRC_THRESHOLD_MIGRATION 30000 // per thread
-#define SRC_THRESHOLD_CLIENT 9000 // 27000 // 9000 // 30000 // 13000 // 14000 // 28000 // 30000 // per thread
+#define SRC_THRESHOLD_CLIENT 30000 // 9000 // 27000 // 9000 // 30000 // 13000 // 14000 // 28000 // 30000 // per thread
 #define DST_THRESHOLD_MIGRATION 30000 // per thread
 #define DST_THRESHOLD_CLIENT 70000 // per thread, not used
 #define CHECK_PERIOD 1000 // milliseconds

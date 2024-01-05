@@ -572,7 +572,7 @@ void MigrationManager::SourceRedisHandlerThread(uint32_t thread_id) {
         }
         
       
-        // if (migration_start == false || client_op < SRC_THRESHOLD_CLIENT) 
+        if (migration_start == false || client_op < SRC_THRESHOLD_CLIENT) 
         {
           if (op_queue[storage_config.src_port_list[redis_id]].size_approx() > 0) {
               size_t count = op_queue[storage_config.src_port_list[redis_id]].try_dequeue_bulk(bulk_data, REQ_PIPELINE);
