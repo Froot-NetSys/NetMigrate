@@ -82,5 +82,6 @@ cpulimit -p 1234 -l 40
 ```
 Note: for Figure 7 in the paper, we run NetMigrate-long policy with limited CPU in the source Redis.
 
-
+## Run NetMigrate with different migration policies
+NetMigrate can be configured to different migration finish time.
 
