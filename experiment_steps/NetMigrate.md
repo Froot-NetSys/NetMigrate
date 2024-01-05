@@ -84,4 +84,10 @@ Note: for Figure 7 in the paper, we run NetMigrate-long policy with limited CPU 
 
 ## Run NetMigrate with different migration policies
 NetMigrate can be configured to different migration finish time.
+Currently, we can do this by setting the client query serving threshold (requests/second) in the source server agent code: [SRC_THRESHOLD_CLIENT](https://github.com/Froot-NetSys/NetMigrate/blob/main/cpp/server/NetMigrate/src/include/MigrationManager.h#L43) 
+and recompile the NetMigrate server agent (in source server, netx7):
+```
+cd $NetMigrate/cpp/server/NetMigrate/build
+make clean && make
+```
 
