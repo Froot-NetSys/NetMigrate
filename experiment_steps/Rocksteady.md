@@ -1,5 +1,13 @@
 # Run Migration  
 
+## Start Source Redis-server 
+In source (netx7):
+```
+ps aux | grep redis # check existing redis-server
+sudo kill -9 xxxx (redis pid)
+cd ~; redis-server --protected-mode no --port 6380 --save "" --appendonly no &
+```
+
 ## Start Destination Redis-server 
 In destination (netx5):
 ```
