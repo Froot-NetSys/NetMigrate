@@ -4,41 +4,6 @@ NetMigrate is a key-value store live migration protocol by leveraging programmal
 
 More details are available in our [FAST'24 paper](https://github.com/zzylol/zzylol.github.io/blob/master/files/NetMigrate_FAST.pdf).
 
-## FAST’24 Artifact Evaluation Only
-For FAST Artifact Evlauation, we provide a local testbed with everything installed. We ask the reviewers to share their ssh public keys via HotCRP. If encountering any problems, we are always available in the HopCRP.
-
-**Note:** The hardware and OS kernel versions in the testbed have changed since submission. The actual performance numbers may vary.
-
-### Run Migration with Four Protocols
-Our testbed has one Intel Tofino Switch (netxy) and 3 servers (netx4, netx5, netx7). We use netx7 as the source server, netx5 as the destination server, and netx4 as the client.
-
-<p align="center">
-  <img src="./experiment_steps/figures/topo_testbed.png" width="500">
-</p>
-
-
-
-0. Setup environment variables in netx7, netx5, and next4 servers.
-```
-export NetMigrate=~/fast_ae/NetMigrate/
-```
-
-
-Experiment steps: 
-1. Before running a new experiment, kill and restart previous redis-server in *both source and destination servers*.
-2. Before running a new NetMigrate experiment, ctrl-C the switchd and controller program and restart switchd and controller *on the switch (netxy)* using commands in [Tofino switch P4 code and controller README](tna_kv_migration/README.md).
-3. For loading data to the source Redis instance, we provided a ```dumb.rdb``` Redis snapshot in the source server and loading it to the source redis-server takes only **~3 min** by 
-```cd ~; redis-server --protected-mode no --port 6380 --save "" --appendonly no &```, which will load dumb.rdb into redis-server with port 6380.
-4. Each experiment requires multiple terminals and we also suggest to use tmux for long-running experiments.
-
-
-**Run Migration with Four Protocols**   
-* [Rocksteady](experiment_steps/Rocksteady.md)
-* [Fulva](experiment_steps/Fulva.md)
-* [Source-migration](experiment_steps/Source.md)
-* [NetMigrate](experiment_steps/NetMigrate.md)
-
-
 ## Content
 * cpp/
     * server/: 4 migration protocols' server agents.
@@ -164,8 +129,6 @@ make BIND_ROCKSTEADY=1
 ./ycsb-rocksteady -load -db KV -P workloads/workloada -P Rocksteady/load.properties -p threadcount=4 -p recordcount=256000000 -s # load data first
 ```
 
-
-
 ### 2. Run Migration with Four Protocols
 Notes: 
 1. Before running a new experiment, kill and restart previous redis-server in both source and destination servers.
@@ -175,5 +138,11 @@ Notes:
 * [Source-migration](experiment_steps/Source.md)
 * [NetMigrate](experiment_steps/NetMigrate.md)
 
+
 ## License
 The code is released under [GNU Affero General Public License v3.0](LICENSE).
+
+
+
+
+
